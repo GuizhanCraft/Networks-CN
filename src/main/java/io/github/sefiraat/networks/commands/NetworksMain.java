@@ -1,11 +1,15 @@
 package io.github.sefiraat.networks.commands;
 
 import io.github.sefiraat.networks.network.stackcaches.CardInstance;
+import io.github.sefiraat.networks.network.stackcaches.QuantumCache;
+import io.github.sefiraat.networks.slimefun.NetworkSlimefunItems;
+import io.github.sefiraat.networks.slimefun.network.NetworkQuantumStorage;
 import io.github.sefiraat.networks.slimefun.tools.NetworkCard;
 import io.github.sefiraat.networks.utils.Keys;
 import io.github.sefiraat.networks.utils.Theme;
 import io.github.sefiraat.networks.utils.datatypes.DataTypeMethods;
 import io.github.sefiraat.networks.utils.datatypes.PersistentCardInstanceType;
+import io.github.sefiraat.networks.utils.datatypes.PersistentQuantumStorageType;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -16,57 +20,117 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import javax.annotation.Nonnull;
+import java.util.HashMap;
+import java.util.Map;
 
 public class NetworksMain implements CommandExecutor {
+
+    private static final Map<Integer, NetworkQuantumStorage> QUANTUM_REPLACEMENT_MAP = new HashMap<>();
+
+    static {
+        QUANTUM_REPLACEMENT_MAP.put(4096, NetworkSlimefunItems.NETWORK_QUANTUM_STORAGE_1);
+        QUANTUM_REPLACEMENT_MAP.put(32768, NetworkSlimefunItems.NETWORK_QUANTUM_STORAGE_2);
+        QUANTUM_REPLACEMENT_MAP.put(262144, NetworkSlimefunItems.NETWORK_QUANTUM_STORAGE_3);
+        QUANTUM_REPLACEMENT_MAP.put(2097152, NetworkSlimefunItems.NETWORK_QUANTUM_STORAGE_4);
+        QUANTUM_REPLACEMENT_MAP.put(16777216, NetworkSlimefunItems.NETWORK_QUANTUM_STORAGE_5);
+        QUANTUM_REPLACEMENT_MAP.put(134217728, NetworkSlimefunItems.NETWORK_QUANTUM_STORAGE_6);
+        QUANTUM_REPLACEMENT_MAP.put(1073741824, NetworkSlimefunItems.NETWORK_QUANTUM_STORAGE_7);
+        QUANTUM_REPLACEMENT_MAP.put(Integer.MAX_VALUE, NetworkSlimefunItems.NETWORK_QUANTUM_STORAGE_8);
+    }
 
     @Override
     public boolean onCommand(@Nonnull CommandSender sender, @Nonnull Command command, @Nonnull String label, @Nonnull String[] args) {
         if (sender instanceof Player player) {
-            if ((player.isOp() || player.hasPermission("networks.admin")) && args.length >= 2) {
-                if (args[0].equalsIgnoreCase("fillcard")) {
+            if (args[0].equalsIgnoreCase("fillquantum")) {
+                if ((player.isOp() || player.hasPermission("networks.admin")) && args.length >= 2) {
                     try {
                         int number = Integer.parseInt(args[1]);
-                        fillCard(player, number);
+                        fillQuantum(player, number);
                         return true;
                     } catch (NumberFormatException exception) {
                         return false;
                     }
                 }
+            } else if (args[0].equalsIgnoreCase("replacecard")) {
+                replaceCard(player);
+                return true;
             }
         }
         return true;
     }
 
-    public void fillCard(Player player, int amount) {
+    public void fillQuantum(Player player, int amount) {
         final ItemStack itemStack = player.getInventory().getItemInMainHand();
         if (itemStack == null || itemStack.getType() == Material.AIR) {
-            player.sendMessage(Theme.ERROR + "你必须手持内存卡");
+            player.sendMessage(Theme.ERROR + "你必须手持量子存储");
             return;
         }
 
         SlimefunItem slimefunItem = SlimefunItem.getByItem(itemStack);
 
-        if (!(slimefunItem instanceof NetworkCard card)) {
-            player.sendMessage(Theme.ERROR + "你必须手持内存卡");
+        if (!(slimefunItem instanceof NetworkQuantumStorage)) {
+            player.sendMessage(Theme.ERROR + "你手中的物品必须为量子存储");
             return;
         }
 
         ItemMeta meta = itemStack.getItemMeta();
-        final CardInstance cardInstance = DataTypeMethods.getCustom(
+        final QuantumCache quantumCache = DataTypeMethods.getCustom(
             meta,
-            Keys.CARD_INSTANCE,
-            PersistentCardInstanceType.TYPE
+            Keys.QUANTUM_STORAGE_INSTANCE,
+            PersistentQuantumStorageType.TYPE
         );
 
-        if (cardInstance == null || cardInstance.getItemStack() == null) {
-            player.sendMessage(Theme.ERROR + "该内存卡没有指定物品，或内存卡已损坏");
+        if (quantumCache == null || quantumCache.getItemStack() == null) {
+            player.sendMessage(Theme.ERROR + "量子存储未指定物品或已损坏");
             return;
         }
 
-        cardInstance.setAmount(amount);
-        DataTypeMethods.setCustom(meta, Keys.CARD_INSTANCE, PersistentCardInstanceType.TYPE, cardInstance);
-        cardInstance.updateLore(meta);
+        quantumCache.setAmount(amount);
+        DataTypeMethods.setCustom(meta, Keys.CARD_INSTANCE, PersistentQuantumStorageType.TYPE, quantumCache);
+        quantumCache.updateMetaLore(meta);
         itemStack.setItemMeta(meta);
         player.sendMessage(Theme.SUCCESS + "已更新物品");
+    }
+
+    public void replaceCard(Player player) {
+        final ItemStack oldCard = player.getInventory().getItemInMainHand();
+        if (oldCard == null || oldCard.getType() == Material.AIR) {
+            player.sendMessage(Theme.ERROR + "你必须手持网络内存卡");
+            return;
+        }
+
+        final SlimefunItem slimefunItem = SlimefunItem.getByItem(oldCard);
+
+        if (!(slimefunItem instanceof NetworkCard card)) {
+            player.sendMessage(Theme.ERROR + "你手中的物品必须为网络内存卡");
+            return;
+        }
+
+        final ItemMeta oldCardItemMeta = oldCard.getItemMeta();
+        final CardInstance cardInstance = DataTypeMethods.getCustom(
+            oldCardItemMeta,
+            Keys.CARD_INSTANCE,
+            PersistentCardInstanceType.TYPE
+        );
+        final NetworkQuantumStorage quantum = QUANTUM_REPLACEMENT_MAP.get(card.getSize());
+        final ItemStack replacement = quantum.getItem().clone();
+
+        if (cardInstance.getAmount() == 0) {
+            player.getInventory().setItemInMainHand(replacement);
+            player.sendMessage(Theme.SUCCESS + "内存卡为空，已替换为全新的量子存储");
+        } else {
+            final ItemMeta quantumItemMeta = replacement.getItemMeta();
+            final QuantumCache cache = createReplacementCache(quantum, cardInstance);
+            DataTypeMethods.setCustom(quantumItemMeta, Keys.QUANTUM_STORAGE_INSTANCE, PersistentQuantumStorageType.TYPE, cache);
+            cache.updateMetaLore(quantumItemMeta);
+            replacement.setItemMeta(quantumItemMeta);
+
+            player.getInventory().setItemInMainHand(replacement);
+            player.sendMessage(Theme.SUCCESS + "内存卡已替换为量子存储");
+        }
+    }
+
+    private QuantumCache createReplacementCache(NetworkQuantumStorage storage, CardInstance cardInstance) {
+        return new QuantumCache(cardInstance.getItemStack(), cardInstance.getAmount(), storage.getMaxAmount(), true);
     }
 }

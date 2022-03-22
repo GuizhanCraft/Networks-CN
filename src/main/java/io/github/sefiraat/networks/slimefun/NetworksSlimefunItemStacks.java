@@ -52,6 +52,15 @@ public class NetworksSlimefunItemStacks {
     public static final SlimefunItemStack NETWORK_CRAFTING_GRID;
     public static final SlimefunItemStack NETWORK_CELL;
     public static final SlimefunItemStack NETWORK_MEMORY_SHELL;
+    public static final SlimefunItemStack NETWORK_QUANTUM_WORKBENCH;
+    public static final SlimefunItemStack NETWORK_QUANTUM_STORAGE_1;
+    public static final SlimefunItemStack NETWORK_QUANTUM_STORAGE_2;
+    public static final SlimefunItemStack NETWORK_QUANTUM_STORAGE_3;
+    public static final SlimefunItemStack NETWORK_QUANTUM_STORAGE_4;
+    public static final SlimefunItemStack NETWORK_QUANTUM_STORAGE_5;
+    public static final SlimefunItemStack NETWORK_QUANTUM_STORAGE_6;
+    public static final SlimefunItemStack NETWORK_QUANTUM_STORAGE_7;
+    public static final SlimefunItemStack NETWORK_QUANTUM_STORAGE_8;
     public static final SlimefunItemStack NETWORK_MEMORY_WIPER_1;
     public static final SlimefunItemStack NETWORK_MEMORY_WIPER_2;
     public static final SlimefunItemStack NETWORK_MEMORY_WIPER_3;
@@ -210,11 +219,11 @@ public class NetworksSlimefunItemStacks {
             Theme.MACHINE,
             "网络监视器",
             "网络监视器可以与附近的方块交互",
-            "实现放入/取出物品",
+            "让指定方块可以接入网络",
             "",
             "目前支持:",
-            "无尽科技存储",
-            "网络读卡器"
+            "无尽科技 - 存储单元",
+            "网络 - 量子存储"
         );
 
         NETWORK_IMPORT = Theme.themedSlimefunItemStack(
@@ -302,6 +311,94 @@ public class NetworksSlimefunItemStacks {
             "网络读卡器",
             "网络读卡器是一个可以让",
             "网络访问其中内存卡内容的方块"
+        );
+
+        NETWORK_QUANTUM_WORKBENCH = Theme.themedSlimefunItemStack(
+            "NTW_QUANTUM_WORKBENCH",
+            new ItemStack(Material.BRAIN_CORAL_BLOCK),
+            Theme.MACHINE,
+            "网络量子工作台",
+            "可以合成量子存储"
+        );
+
+        NETWORK_QUANTUM_STORAGE_1 = Theme.themedSlimefunItemStack(
+            "NTW_QUANTUM_STORAGE_1",
+            new ItemStack(Material.WHITE_TERRACOTTA),
+            Theme.MACHINE,
+            "网络量子存储 (4K)",
+            "可存储 " + NetworkCard.getSizes()[0] + " 个物品",
+            "",
+            "在量子奇点中存储大量物品"
+        );
+
+        NETWORK_QUANTUM_STORAGE_2 = Theme.themedSlimefunItemStack(
+            "NTW_QUANTUM_STORAGE_2",
+            new ItemStack(Material.LIGHT_GRAY_TERRACOTTA),
+            Theme.MACHINE,
+            "网络量子存储 (32K)",
+            "可存储 " + NetworkCard.getSizes()[1] + " 个物品",
+            "",
+            "在量子奇点中存储大量物品"
+        );
+
+        NETWORK_QUANTUM_STORAGE_3 = Theme.themedSlimefunItemStack(
+            "NTW_QUANTUM_STORAGE_3",
+            new ItemStack(Material.GRAY_TERRACOTTA),
+            Theme.MACHINE,
+            "网络量子存储 (262K)",
+            "可存储 " + NetworkCard.getSizes()[2] + " 个物品",
+            "",
+            "在量子奇点中存储大量物品"
+        );
+
+        NETWORK_QUANTUM_STORAGE_4 = Theme.themedSlimefunItemStack(
+            "NTW_QUANTUM_STORAGE_4",
+            new ItemStack(Material.BROWN_TERRACOTTA),
+            Theme.MACHINE,
+            "网络量子存储 (2M)",
+            "可存储 " + NetworkCard.getSizes()[3] + " 个物品",
+            "",
+            "在量子奇点中存储大量物品"
+        );
+
+        NETWORK_QUANTUM_STORAGE_5 = Theme.themedSlimefunItemStack(
+            "NTW_QUANTUM_STORAGE_5",
+            new ItemStack(Material.BLACK_TERRACOTTA),
+            Theme.MACHINE,
+            "网络量子存储 (16M)",
+            "可存储 " + NetworkCard.getSizes()[4] + " 个物品",
+            "",
+            "在量子奇点中存储大量物品"
+        );
+
+        NETWORK_QUANTUM_STORAGE_6 = Theme.themedSlimefunItemStack(
+            "NTW_QUANTUM_STORAGE_6",
+            new ItemStack(Material.PURPLE_TERRACOTTA),
+            Theme.MACHINE,
+            "网络量子存储 (134M)",
+            "可存储 " + NetworkCard.getSizes()[5] + " 个物品",
+            "",
+            "在量子奇点中存储大量物品"
+        );
+
+        NETWORK_QUANTUM_STORAGE_7 = Theme.themedSlimefunItemStack(
+            "NTW_QUANTUM_STORAGE_7",
+            new ItemStack(Material.MAGENTA_TERRACOTTA),
+            Theme.MACHINE,
+            "网络量子存储 (1B)",
+            "可存储 " + NetworkCard.getSizes()[6] + " 个物品",
+            "",
+            "在量子奇点中存储大量物品"
+        );
+
+        NETWORK_QUANTUM_STORAGE_8 = Theme.themedSlimefunItemStack(
+            "NTW_QUANTUM_STORAGE_8",
+            new ItemStack(Material.RED_TERRACOTTA),
+            Theme.MACHINE,
+            "网络量子存储 (∞)",
+            "可存储几乎无限多个物品",
+            "",
+            "在量子奇点中存储大量物品"
         );
 
         NETWORK_MEMORY_WIPER_1 = Theme.themedSlimefunItemStack(
