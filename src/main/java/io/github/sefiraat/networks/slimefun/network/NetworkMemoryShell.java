@@ -11,6 +11,7 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
@@ -131,6 +132,9 @@ public class NetworkMemoryShell extends SlimefunItem {
             return;
         }
         for (ItemStack itemStack : input) {
+            if (SlimefunTag.SHULKER_BOXES.isTagged(itemStack.getType())) {
+                continue;
+            }
             if (StackUtils.itemsMatch(cache.getCardInstance(), itemStack, true)) {
                 cache.getCardInstance().increaseAmount(itemStack.getAmount());
                 itemStack.setAmount(0);
