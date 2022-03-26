@@ -315,7 +315,7 @@ public class NetworksSlimefunItemStacks {
 
         NETWORK_QUANTUM_WORKBENCH = Theme.themedSlimefunItemStack(
             "NTW_QUANTUM_WORKBENCH",
-            new ItemStack(Material.BRAIN_CORAL_BLOCK),
+            new ItemStack(Material.DRIED_KELP_BLOCK),
             Theme.MACHINE,
             "网络量子工作台",
             "可以合成量子存储"

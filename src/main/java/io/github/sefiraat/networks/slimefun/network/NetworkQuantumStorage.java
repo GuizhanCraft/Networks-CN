@@ -292,7 +292,7 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
             for (int i = 0; i < 3; i++) {
                 lore.remove(lore.size() - 1);
             }
-            itemMeta.setLore(lore.size() == 0 ? null : lore);
+            itemMeta.setLore(lore.isEmpty() ? null : lore);
             clone.setItemMeta(itemMeta);
 
             final QuantumCache cache = new QuantumCache(clone, amount, this.maxAmount, voidExcess);
@@ -311,7 +311,7 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
         final BlockMenu blockMenu = BlockStorage.getInventory(event.getBlock());
 
         if (blockMenu != null) {
-            final QuantumCache cache = CACHES.get(blockMenu.getLocation());
+            final QuantumCache cache = CACHES.remove(blockMenu.getLocation());
 
             if (cache != null && cache.getAmount() > 0 && cache.getItemStack() != null) {
                 final ItemStack itemToDrop = this.getItem().clone();
@@ -327,7 +327,6 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
             for (int i : this.slotsToDrop) {
                 blockMenu.dropItems(location, i);
             }
-            BlockStorage.clearBlockInfo(location);
         }
     }
 
