@@ -33,7 +33,7 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
     public Networks() {
         this.username = "ybw0014";
         this.repo = "Networks";
-        this.branch = "master";
+        this.branch = "test";
     }
 
     @Override
@@ -60,7 +60,7 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
 
     public void tryUpdate() {
         if (getConfig().getBoolean("auto-update") &&
-            getDescription().getVersion().startsWith("Build")) {
+            getDescription().getVersion().startsWith("Test")) {
             new GuizhanBuildsUpdater(this, getFile(), username, repo, branch, false).start();
         }
     }
