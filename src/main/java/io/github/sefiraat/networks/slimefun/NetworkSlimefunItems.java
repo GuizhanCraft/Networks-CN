@@ -1,27 +1,7 @@
 package io.github.sefiraat.networks.slimefun;
 
 import io.github.sefiraat.networks.Networks;
-import io.github.sefiraat.networks.slimefun.network.NetworkAutoCrafter;
-import io.github.sefiraat.networks.slimefun.network.NetworkBridge;
-import io.github.sefiraat.networks.slimefun.network.NetworkCell;
-import io.github.sefiraat.networks.slimefun.network.NetworkController;
-import io.github.sefiraat.networks.slimefun.network.NetworkEncoder;
-import io.github.sefiraat.networks.slimefun.network.NetworkExport;
-import io.github.sefiraat.networks.slimefun.network.NetworkGrabber;
-import io.github.sefiraat.networks.slimefun.network.NetworkGreedyBlock;
-import io.github.sefiraat.networks.slimefun.network.NetworkImport;
-import io.github.sefiraat.networks.slimefun.network.NetworkMonitor;
-import io.github.sefiraat.networks.slimefun.network.NetworkPowerDisplay;
-import io.github.sefiraat.networks.slimefun.network.NetworkPowerNode;
-import io.github.sefiraat.networks.slimefun.network.NetworkPowerOutlet;
-import io.github.sefiraat.networks.slimefun.network.NetworkPurger;
-import io.github.sefiraat.networks.slimefun.network.NetworkPusher;
-import io.github.sefiraat.networks.slimefun.network.NetworkQuantumStorage;
-import io.github.sefiraat.networks.slimefun.network.NetworkQuantumWorkbench;
-import io.github.sefiraat.networks.slimefun.network.NetworkVanillaGrabber;
-import io.github.sefiraat.networks.slimefun.network.NetworkVanillaPusher;
-import io.github.sefiraat.networks.slimefun.network.NetworkWirelessReceiver;
-import io.github.sefiraat.networks.slimefun.network.NetworkWirelessTransmitter;
+import io.github.sefiraat.networks.slimefun.network.*;
 import io.github.sefiraat.networks.slimefun.network.grid.NetworkCraftingGrid;
 import io.github.sefiraat.networks.slimefun.network.grid.NetworkGrid;
 import io.github.sefiraat.networks.slimefun.tools.CraftingBlueprint;
@@ -62,6 +42,8 @@ public class NetworkSlimefunItems {
     public static final NetworkExport NETWORK_EXPORT;
     public static final NetworkGrabber NETWORK_GRABBER;
     public static final NetworkPusher NETWORK_PUSHER;
+    public static final NetworkMorePusher NETWORK_PUSHER_MORE;
+    public static final NetworkBestPusher NETWORK_PUSHER_BEST;
     public static final NetworkVanillaGrabber NETWORK_VANILLA_GRABBER;
     public static final NetworkVanillaPusher NETWORK_VANILLA_PUSHER;
     public static final NetworkWirelessTransmitter NETWORK_WIRELESS_TRANSMITTER;
@@ -317,6 +299,28 @@ public class NetworkSlimefunItems {
                 OPTIC_CABLE.getItem(), NETWORK_EXPORT.getItem(), OPTIC_CABLE.getItem(),
                 OPTIC_GLASS.getItem(), OPTIC_CABLE.getItem(), OPTIC_GLASS.getItem(),
             }
+        );
+
+        NETWORK_PUSHER_MORE = new NetworkMorePusher(
+                NetworksItemGroups.NETWORK_ITEMS,
+                NetworksSlimefunItemStacks.NETWORK_PUSHER_MORE,
+                RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        NETWORK_PUSHER.getItem(), OPTIC_CABLE.getItem(), NETWORK_PUSHER.getItem(),
+                        OPTIC_CABLE.getItem(), NETWORK_PUSHER.getItem(), OPTIC_CABLE.getItem(),
+                        NETWORK_PUSHER.getItem(), OPTIC_CABLE.getItem(), NETWORK_PUSHER.getItem(),
+                }
+        );
+
+        NETWORK_PUSHER_BEST = new NetworkBestPusher(
+                NetworksItemGroups.NETWORK_ITEMS,
+                NetworksSlimefunItemStacks.NETWORK_PUSHER_BEST,
+                RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        NETWORK_PUSHER_MORE.getItem(), OPTIC_CABLE.getItem(), NETWORK_PUSHER_MORE.getItem(),
+                        OPTIC_CABLE.getItem(), NETWORK_PUSHER_MORE.getItem(), OPTIC_CABLE.getItem(),
+                        NETWORK_PUSHER_MORE.getItem(), OPTIC_CABLE.getItem(), NETWORK_PUSHER_MORE.getItem(),
+                }
         );
 
         NETWORK_VANILLA_GRABBER = new NetworkVanillaGrabber(
@@ -808,6 +812,8 @@ public class NetworkSlimefunItems {
         NETWORK_EXPORT.register(plugin);
         NETWORK_GRABBER.register(plugin);
         NETWORK_PUSHER.register(plugin);
+        NETWORK_PUSHER_MORE.register(plugin);
+        NETWORK_PUSHER_BEST.register(plugin);
         NETWORK_VANILLA_GRABBER.register(plugin);
         NETWORK_VANILLA_PUSHER.register(plugin);
         NETWORK_WIRELESS_TRANSMITTER.register(plugin);

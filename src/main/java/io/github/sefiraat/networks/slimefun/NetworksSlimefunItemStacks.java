@@ -46,6 +46,8 @@ public class NetworksSlimefunItemStacks {
     public static final SlimefunItemStack NETWORK_EXPORT;
     public static final SlimefunItemStack NETWORK_GRABBER;
     public static final SlimefunItemStack NETWORK_PUSHER;
+    public static final SlimefunItemStack NETWORK_PUSHER_MORE;
+    public static final SlimefunItemStack NETWORK_PUSHER_BEST;
     public static final SlimefunItemStack NETWORK_VANILLA_GRABBER;
     public static final SlimefunItemStack NETWORK_VANILLA_PUSHER;
     public static final SlimefunItemStack NETWORK_WIRELESS_TRANSMITTER;
@@ -255,9 +257,27 @@ public class NetworksSlimefunItemStacks {
             "NTW_PUSHER",
             new ItemStack(Material.BROWN_STAINED_GLASS),
             Theme.MACHINE,
-            "网络推送器",
+            "网络推送器v1",
             "网络推送器会尝试将",
             "指定的物品送入机器中"
+        );
+
+        NETWORK_PUSHER_MORE = Theme.themedSlimefunItemStack(
+                "NTW_MOREPUSHER",
+                new ItemStack(Material.BROWN_STAINED_GLASS),
+                Theme.MACHINE,
+                "网络推送器v2",
+                "网络推送器会尝试将",
+                "指定的物品送入机器中"
+        );
+
+        NETWORK_PUSHER_BEST = Theme.themedSlimefunItemStack(
+                "NTW_BESTPUSHER",
+                new ItemStack(Material.BROWN_STAINED_GLASS),
+                Theme.MACHINE,
+                "网络推送器v3",
+                "网络推送器会尝试将",
+                "指定的物品送入机器中"
         );
 
         NETWORK_VANILLA_GRABBER = Theme.themedSlimefunItemStack(
