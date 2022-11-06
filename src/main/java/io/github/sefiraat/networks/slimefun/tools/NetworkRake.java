@@ -8,6 +8,8 @@ import io.github.sefiraat.networks.slimefun.network.NetworkImport;
 import io.github.sefiraat.networks.slimefun.network.NetworkMonitor;
 import io.github.sefiraat.networks.slimefun.network.NetworkObject;
 import io.github.sefiraat.networks.slimefun.network.NetworkPusher;
+import io.github.sefiraat.networks.slimefun.network.NetworkMorePusher;
+import io.github.sefiraat.networks.slimefun.network.NetworkBestPusher;
 import io.github.sefiraat.networks.utils.Keys;
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
@@ -20,6 +22,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.implementation.items.LimitedUseItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
+import net.guizhanss.guizhanlib.slimefun.addon.WikiSetup;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
@@ -46,6 +49,8 @@ public class NetworkRake extends LimitedUseItem {
         viableObjects.add(NetworkBridge.class);
         viableObjects.add(NetworkMonitor.class);
         viableObjects.add(NetworkPusher.class);
+        viableObjects.add(NetworkMorePusher.class);
+        viableObjects.add(NetworkBestPusher.class);
         viableObjects.add(NetworkGrabber.class);
         viableObjects.add(NetworkImport.class);
         viableObjects.add(NetworkExport.class);
@@ -99,6 +104,6 @@ public class NetworkRake extends LimitedUseItem {
 
     @Override
     public void postRegister() {
-        addWikiPage(WIKI_PAGE);
+        WikiSetup.setupItem(this, WIKI_PAGE);
     }
 }

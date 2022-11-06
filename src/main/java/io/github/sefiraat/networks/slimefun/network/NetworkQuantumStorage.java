@@ -25,6 +25,7 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 import net.guizhanss.guizhanlib.java.BooleanHelper;
+import net.guizhanss.guizhanlib.slimefun.addon.WikiSetup;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Tag;
@@ -220,7 +221,7 @@ public class NetworkQuantumStorage extends SlimefunItem implements DistinctiveIt
 
     @Override
     public void postRegister() {
-        addWikiPage(WIKI_PAGE);
+        WikiSetup.setupItem(this, WIKI_PAGE);
         new BlockMenuPreset(this.getId(), this.getItemName()) {
 
             @Override

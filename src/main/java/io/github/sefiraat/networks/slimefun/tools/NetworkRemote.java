@@ -15,6 +15,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import net.guizhanss.guizhanlib.slimefun.addon.WikiSetup;
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
@@ -124,6 +125,6 @@ public class NetworkRemote extends SlimefunItem {
 
     @Override
     public void postRegister() {
-        addWikiPage(WIKI_PAGE);
+        WikiSetup.setupItem(this, WIKI_PAGE);
     }
 }
