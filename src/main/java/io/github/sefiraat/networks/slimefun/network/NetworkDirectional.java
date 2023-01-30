@@ -119,6 +119,16 @@ public abstract class NetworkDirectional extends NetworkObject {
         for (BlockFace blockFace : VALID_FACES) {
             final Block block = blockMenu.getBlock().getRelative(blockFace);
             final SlimefunItem slimefunItem = BlockStorage.check(block);
+            if (slimefunItem != null) {
+                switch (blockFace) {
+                    default -> throw new IllegalStateException("Unexpected value: " + blockFace);
+                }
+            } else {
+                final Material material = block.getType();
+                switch (blockFace) {
+                    default -> throw new IllegalStateException("Unexpected value: " + blockFace);
+                }
+            }
         }
     }
 
