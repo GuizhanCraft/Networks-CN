@@ -23,3 +23,9 @@ jobs:
           cache: 'maven'
       - name: Build with Maven
         run: mvn package --file pom.xml
+      - name: 上传 The Bruh
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: |
+           target/*.jar
