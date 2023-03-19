@@ -359,6 +359,7 @@ public class NetworkSlimefunItems {
                 OPTIC_CABLE.getItem(), NetworksSlimefunItemStacks.NETWORK_IMPORT, OPTIC_CABLE.getItem(),
                 OPTIC_GLASS.getItem(), NetworksSlimefunItemStacks.NETWORK_POWER_OUTLET_1, OPTIC_GLASS.getItem(),
             }
+        );
           
         NETWORK_PUSHER_MORE = new NetworkMorePusher(
                 NetworksItemGroups.NETWORK_ITEMS,
