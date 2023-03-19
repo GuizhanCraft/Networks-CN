@@ -298,26 +298,8 @@ public class NetworksSlimefunItemStacks {
             "4x4范围内的掉落物品吸收,",
             "然后尝试将这些物品送入网络中.",
             "",
-            MessageFormat.format("{0}网络电力消耗: {1}{2}J/粘液刻", Theme.CLICK_INFO, Theme.PASSIVE, 100)
+            MessageFormat.format("{0}网络电力消耗: {1}{2}/粘液刻", Theme.CLICK_INFO, Theme.PASSIVE, 100)
         );
-        NETWORK_PUSHER_MORE = Theme.themedSlimefunItemStack(
-                "NTW_MOREPUSHER",
-                new ItemStack(Material.BROWN_STAINED_GLASS),
-                Theme.MACHINE,
-                "网络推送器v2",
-                "网络推送器会尝试将",
-                "指定的物品送入机器中"
-        );
-
-        NETWORK_PUSHER_BEST = Theme.themedSlimefunItemStack(
-                "NTW_BESTPUSHER",
-                new ItemStack(Material.BROWN_STAINED_GLASS),
-                Theme.MACHINE,
-                "网络推送器v3",
-                "网络推送器会尝试将",
-                "指定的物品送入机器中"
-        );
-
         NETWORK_VANILLA_GRABBER = Theme.themedSlimefunItemStack(
             "NTW_VANILLA_GRABBER",
             new ItemStack(Material.ORANGE_STAINED_GLASS),
