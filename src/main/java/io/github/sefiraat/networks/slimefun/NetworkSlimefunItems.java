@@ -68,6 +68,8 @@ public class NetworkSlimefunItems {
     public static final NetworkControlX NETWORK_CONTROL_X;
     public static final NetworkControlV NETWORK_CONTROL_V;
     public static final NetworkVacuum NETWORK_VACUUM;
+    public static final NetworkMorePusher NETWORK_PUSHER_MORE;
+    public static final NetworkBestPusher NETWORK_PUSHER_BEST;
     public static final NetworkVanillaGrabber NETWORK_VANILLA_GRABBER;
     public static final NetworkVanillaPusher NETWORK_VANILLA_PUSHER;
     public static final NetworkWirelessTransmitter NETWORK_WIRELESS_TRANSMITTER;
@@ -325,6 +327,7 @@ public class NetworkSlimefunItems {
             }
         );
 
+
         NETWORK_CONTROL_X = new NetworkControlX(
             NetworksItemGroups.NETWORK_ITEMS,
             NetworksSlimefunItemStacks.NETWORK_CONTROL_X,
@@ -356,6 +359,27 @@ public class NetworkSlimefunItems {
                 OPTIC_CABLE.getItem(), NetworksSlimefunItemStacks.NETWORK_IMPORT, OPTIC_CABLE.getItem(),
                 OPTIC_GLASS.getItem(), NetworksSlimefunItemStacks.NETWORK_POWER_OUTLET_1, OPTIC_GLASS.getItem(),
             }
+          
+        NETWORK_PUSHER_MORE = new NetworkMorePusher(
+                NetworksItemGroups.NETWORK_ITEMS,
+                NetworksSlimefunItemStacks.NETWORK_PUSHER_MORE,
+                RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        NETWORK_PUSHER.getItem(), OPTIC_CABLE.getItem(), NETWORK_PUSHER.getItem(),
+                        OPTIC_CABLE.getItem(), NETWORK_PUSHER.getItem(), OPTIC_CABLE.getItem(),
+                        NETWORK_PUSHER.getItem(), OPTIC_CABLE.getItem(), NETWORK_PUSHER.getItem(),
+                }
+        );
+
+        NETWORK_PUSHER_BEST = new NetworkBestPusher(
+                NetworksItemGroups.NETWORK_ITEMS,
+                NetworksSlimefunItemStacks.NETWORK_PUSHER_BEST,
+                RecipeType.ENHANCED_CRAFTING_TABLE,
+                new ItemStack[]{
+                        NETWORK_PUSHER_MORE.getItem(), OPTIC_CABLE.getItem(), NETWORK_PUSHER_MORE.getItem(),
+                        OPTIC_CABLE.getItem(), NETWORK_PUSHER_MORE.getItem(), OPTIC_CABLE.getItem(),
+                        NETWORK_PUSHER_MORE.getItem(), OPTIC_CABLE.getItem(), NETWORK_PUSHER_MORE.getItem(),
+                }
         );
 
         NETWORK_VANILLA_GRABBER = new NetworkVanillaGrabber(
@@ -850,6 +874,8 @@ public class NetworkSlimefunItems {
         NETWORK_CONTROL_X.register(plugin);
         NETWORK_CONTROL_V.register(plugin);
         NETWORK_VACUUM.register(plugin);
+        NETWORK_PUSHER_MORE.register(plugin);
+        NETWORK_PUSHER_BEST.register(plugin);
         NETWORK_VANILLA_GRABBER.register(plugin);
         NETWORK_VANILLA_PUSHER.register(plugin);
         NETWORK_WIRELESS_TRANSMITTER.register(plugin);
