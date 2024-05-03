@@ -25,6 +25,7 @@ public class BlockListener implements Listener {
     private void removeNetwork(Location location) {
         NodeDefinition definition = NetworkStorage.getAllNetworkObjects().get(location);
         if (definition == null) return;
+        if (definition.getNode() == null) return;
         NetworkStorage.removeNode(location);
 
         if (definition.getNode().getNodeType() == NodeType.CONTROLLER) {
