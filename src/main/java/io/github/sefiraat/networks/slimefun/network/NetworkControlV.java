@@ -54,7 +54,7 @@ public class NetworkControlV extends NetworkDirectional {
     private final Set<BlockPosition> blockCache = new HashSet<>();
 
     public static final CustomItemStack TEMPLATE_BACKGROUND_STACK = new CustomItemStack(
-        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + "粘贴物品模版"
+        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + Networks.getLocalization().getMessage("paste_match_template")
     );
 
     public NetworkControlV(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {

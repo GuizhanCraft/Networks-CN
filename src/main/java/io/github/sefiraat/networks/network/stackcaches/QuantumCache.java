@@ -1,5 +1,6 @@
 package io.github.sefiraat.networks.network.stackcaches;
 
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.utils.Theme;
 import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
 import org.bukkit.inventory.ItemStack;
@@ -88,25 +89,25 @@ public class QuantumCache extends ItemStackCache {
 
     public void addMetaLore(ItemMeta itemMeta) {
         final List<String> lore = itemMeta.hasLore() ? itemMeta.getLore() : new ArrayList<>();
-        String itemName = "无";
+        String itemName = Networks.getLocalization().getMessage("none");
         if (getItemStack() != null) {
             itemName = ItemStackHelper.getDisplayName(this.getItemStack());
         }
 
         lore.add("");
-        lore.add(Theme.CLICK_INFO + "物品: " + itemName);
-        lore.add(Theme.CLICK_INFO + "数量: " + this.getAmount());
+        lore.add(Theme.CLICK_INFO + Networks.getLocalization().getMessage("holding") + ": " + itemName);
+        lore.add(Theme.CLICK_INFO + Networks.getLocalization().getMessage("amount") + ": " + this.getAmount());
         itemMeta.setLore(lore);
     }
 
     public void updateMetaLore(ItemMeta itemMeta) {
         final List<String> lore = itemMeta.hasLore() ? itemMeta.getLore() : new ArrayList<>();
-        String itemName = "无";
+        String itemName = Networks.getLocalization().getMessage("none");
         if (getItemStack() != null) {
             itemName = ItemStackHelper.getDisplayName(this.getItemStack());
         }
-        lore.add(Theme.CLICK_INFO + "物品: " + itemName);
-        lore.add(Theme.CLICK_INFO + "数量: " + this.getAmount());
+        lore.add(Theme.CLICK_INFO + Networks.getLocalization().getMessage("holding") + ": " + itemName);
+        lore.add(Theme.CLICK_INFO + Networks.getLocalization().getMessage("amount") + ": " + this.getAmount());
         itemMeta.setLore(lore);
     }
 }

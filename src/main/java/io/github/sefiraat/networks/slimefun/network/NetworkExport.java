@@ -3,6 +3,7 @@ package io.github.sefiraat.networks.slimefun.network;
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.NodeType;
 import io.github.sefiraat.networks.network.stackcaches.ItemRequest;
@@ -41,12 +42,12 @@ public class NetworkExport extends NetworkObject {
 
     private static final CustomItemStack TEST_BACKDROP_STACK = new CustomItemStack(
         Material.GREEN_STAINED_GLASS_PANE,
-        Theme.SUCCESS + "指定输出物品"
+        Theme.SUCCESS + Networks.getLocalization().getMessage("export_matching")
     );
 
     private static final CustomItemStack OUTPUT_BACKDROP_STACK = new CustomItemStack(
         Material.ORANGE_STAINED_GLASS_PANE,
-        Theme.SUCCESS + "输出栏"
+        Theme.SUCCESS + Networks.getLocalization().getMessage("output_slot")
     );
 
     private final ItemSetting<Integer> tickRate;

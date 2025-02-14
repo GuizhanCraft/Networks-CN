@@ -22,7 +22,7 @@ public final class NetworksItemGroups {
         Keys.newKey("main"),
         new CustomItemStack(
             new ItemStack(Material.BLACK_STAINED_GLASS),
-            Theme.MAIN.getColor() + "网络 (Networks)"
+            Theme.MAIN.getColor() + Networks.getLocalization().getMessage("networks")
         )
     );
 
@@ -30,7 +30,7 @@ public final class NetworksItemGroups {
         Keys.newKey("materials"),
         new CustomItemStack(
             new ItemStack(Material.WHITE_STAINED_GLASS),
-            Theme.MAIN.getColor() + "合成材料"
+            Theme.MAIN.getColor() + Networks.getLocalization().getMessage("crafting_materials")
         )
     );
 
@@ -38,7 +38,7 @@ public final class NetworksItemGroups {
         Keys.newKey("tools"),
         new CustomItemStack(
             new ItemStack(Material.PAINTING),
-            Theme.MAIN.getColor() + "网络管理工具"
+            Theme.MAIN.getColor() + Networks.getLocalization().getMessage("network_management_tools")
         )
     );
 
@@ -46,7 +46,7 @@ public final class NetworksItemGroups {
         Keys.newKey("network_items"),
         new CustomItemStack(
             new ItemStack(Material.BLACK_STAINED_GLASS),
-            Theme.MAIN.getColor() + "网络物品"
+            Theme.MAIN.getColor() + Networks.getLocalization().getMessage("network_items")
         )
     );
 
@@ -54,7 +54,7 @@ public final class NetworksItemGroups {
         Keys.newKey("network_quantums"),
         new CustomItemStack(
             new ItemStack(Material.WHITE_TERRACOTTA),
-            Theme.MAIN.getColor() + "量子存储设备"
+            Theme.MAIN.getColor() + Networks.getLocalization().getMessage("network_quantum_storage_devices")
         )
     );
 
@@ -62,7 +62,7 @@ public final class NetworksItemGroups {
         Keys.newKey("disabled_items"),
         new CustomItemStack(
             new ItemStack(Material.BARRIER),
-            Theme.MAIN.getColor() + "已禁用/移除的物品"
+            Theme.MAIN.getColor() + Networks.getLocalization().getMessage("disabled_items")
         )
     );
 

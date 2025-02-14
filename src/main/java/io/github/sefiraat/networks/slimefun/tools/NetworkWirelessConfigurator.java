@@ -2,6 +2,7 @@ package io.github.sefiraat.networks.slimefun.tools;
 
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import de.jeff_media.morepersistentdatatypes.DataType;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.slimefun.network.NetworkWirelessReceiver;
 import io.github.sefiraat.networks.slimefun.network.NetworkWirelessTransmitter;
 import io.github.sefiraat.networks.utils.Keys;
@@ -54,7 +55,7 @@ public class NetworkWirelessConfigurator extends SlimefunItem {
                                 setReceiver(heldItem, blockMenu, player);
                             }
                         } else {
-                            player.sendMessage(Theme.ERROR + "必须对着网络无线方块使用。");
+                            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("must_target_wireless_block"));
                         }
                     }
                     e.cancel();
@@ -72,17 +73,17 @@ public class NetworkWirelessConfigurator extends SlimefunItem {
         final Location location = PersistentDataAPI.get(itemMeta, TARGET_LOCATION, DataType.LOCATION);
 
         if (location == null) {
-            player.sendMessage(Theme.ERROR + "需要先设置接收器位置。");
+            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("no_wireless_been_set"));
             return;
         }
 
         if (location.getWorld() != blockMenu.getLocation().getWorld()) {
-            player.sendMessage(Theme.ERROR + "网络无线接收器在不同的世界中。");
+            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("wireless_different_world"));
             return;
         }
 
         transmitter.addLinkedLocation(blockMenu.getBlock(), location);
-        player.sendMessage(Theme.SUCCESS + "已设置网络无线发射器。");
+        player.sendMessage(Theme.SUCCESS + Networks.getLocalization().getMessage("wireless_transmitters_location"));
     }
 
     private void setReceiver(@Nonnull ItemStack itemStack, @Nonnull BlockMenu blockMenu, @Nonnull Player player) {
@@ -90,6 +91,6 @@ public class NetworkWirelessConfigurator extends SlimefunItem {
         final ItemMeta itemMeta = itemStack.getItemMeta();
         PersistentDataAPI.set(itemMeta, TARGET_LOCATION, DataType.LOCATION, location);
         itemStack.setItemMeta(itemMeta);
-        player.sendMessage(Theme.SUCCESS + "已存储网络无线接收器的位置。");
+        player.sendMessage(Theme.SUCCESS + Networks.getLocalization().getMessage("wireless_been_set"));
     }
 }

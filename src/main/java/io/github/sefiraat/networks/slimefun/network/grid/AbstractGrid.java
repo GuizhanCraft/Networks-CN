@@ -4,6 +4,7 @@ import com.github.houbb.pinyin.constant.enums.PinyinStyleEnum;
 import com.github.houbb.pinyin.util.PinyinHelper;
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.GridItemRequest;
 import io.github.sefiraat.networks.network.NetworkRoot;
 import io.github.sefiraat.networks.network.NodeDefinition;
@@ -52,22 +53,22 @@ public abstract class AbstractGrid extends NetworkObject {
 
     private static final CustomItemStack PAGE_PREVIOUS_STACK = new CustomItemStack(
         Material.RED_STAINED_GLASS_PANE,
-        Theme.CLICK_INFO.getColor() + "上一页"
+        Theme.CLICK_INFO.getColor() + Networks.getLocalization().getMessage("previous_page")
     );
 
     private static final CustomItemStack PAGE_NEXT_STACK = new CustomItemStack(
         Material.RED_STAINED_GLASS_PANE,
-        Theme.CLICK_INFO.getColor() + "下一页"
+        Theme.CLICK_INFO.getColor() + Networks.getLocalization().getMessage("next_page")
     );
 
     private static final CustomItemStack CHANGE_SORT_STACK = new CustomItemStack(
         Material.BLUE_STAINED_GLASS_PANE,
-        Theme.CLICK_INFO.getColor() + "更改排序方式"
+        Theme.CLICK_INFO.getColor() + Networks.getLocalization().getMessage("change_sorting")
     );
 
     private static final CustomItemStack FILTER_STACK = new CustomItemStack(
         Material.NAME_TAG,
-        Theme.CLICK_INFO.getColor() + "设置过滤器 (右键点击以清除)"
+        Theme.CLICK_INFO.getColor() + Networks.getLocalization().getMessage("set_filter")
     );
 
     private static final Comparator<Map.Entry<ItemStack, Integer>> ALPHABETICAL_SORT = Comparator.comparing(
@@ -234,13 +235,13 @@ public abstract class AbstractGrid extends NetworkObject {
             gridCache.setFilter(null);
         } else {
             player.closeInventory();
-            player.sendMessage(Theme.WARNING + "请输入你想要过滤的物品名称(显示名)或类型");
+            player.sendMessage(Theme.WARNING + Networks.getLocalization().getMessage("type_to_filter"));
             ChatUtils.awaitInput(player, s -> {
                 if (s.isBlank()) {
                     return;
                 }
                 gridCache.setFilter(s.toLowerCase(Locale.ROOT));
-                player.sendMessage(Theme.SUCCESS + "已启用过滤器");
+                player.sendMessage(Theme.SUCCESS + Networks.getLocalization().getMessage("filter_applied"));
             });
         }
         return false;
@@ -370,7 +371,7 @@ public abstract class AbstractGrid extends NetworkObject {
 
     @Nonnull
     private static List<String> getLoreAddition(int amount) {
-        final MessageFormat format = new MessageFormat("{0}数量: {1}{2}", Locale.ROOT);
+        final MessageFormat format = new MessageFormat(Networks.getLocalization().getMessage("format_amount"), Locale.ROOT);
         return List.of(
             "",
             format.format(new Object[] {Theme.CLICK_INFO.getColor(), Theme.PASSIVE.getColor(), amount}, new StringBuffer(), null).toString()

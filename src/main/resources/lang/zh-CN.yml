@@ -1,0 +1,642 @@
+categories:
+  ash: asdasd2
+
+items:
+  ntw_stone_chunk_seed:
+    name: 石块之种
+    lore:
+    - 这种植物成熟后,
+    - 收获时将获得石块.
+    aditional_lore:
+    - 下界草方块
+    - (或净化等级更高的)
+  ntw_synthetic_seed:
+    name: 人造之种
+    lore:
+    - 这个种子没有任何效果.
+    aditional_lore:
+    - 下界草方块
+    - (或净化等级更高的)
+  ntw_synthetic_emerald_seed:
+    name: 人造绿宝石之种
+    lore:
+    - 这种植物成熟后,
+    - 收获时将获得人造绿宝石.
+    aditional_lore:
+    - 贪婪泥土
+    - (或净化等级更高的)
+  ntw_synthetic_diamond_seed:
+    name: 人造钻石之种
+    lore:
+    - 这种植物成熟后,
+    - 收获时将获得人造钻石.
+    aditional_lore:
+    - 贪婪泥土
+    - (或净化等级更高的)
+  ntw_fragmented_seed:
+    name: 碎片之种
+    lore:
+    - 这种植物成熟后,
+    - 收获时将获得人造绿宝石碎片.
+    aditional_lore:
+    - 贪婪泥土
+    - (或净化等级更高的)
+  quantum_workbench:
+    name: 网络量子工作台
+    lore:
+    - 在量子工作台中制作
+  
+  ntw_synthetic_emerald_shard:
+    name: 人造绿宝石碎片
+    lore:
+    - 一块人造绿宝石的碎片
+    - 是信息传输的支柱
+  ntw_optic_glass:
+    name: 光学玻璃
+    lore:
+    - 能够传输少量信息的玻璃
+  ntw_optic_cable:
+    name: 光缆
+    lore:
+    - 能够传输大量信息的光缆
+  ntw_optic_star:
+    name: 光学之星
+    lore:
+    - 能够传输大量信息的星
+  ntw_radioactive_optic_star:
+    name: 放射性光学之星
+    lore:
+    - 能够传输几乎无限信息的星
+  ntw_shrinking_base:
+    name: 缩小底座
+    lore:
+    - 可以让大型物体变小的装置
+  ntw_simple_nanobots:
+    name: 简易纳米机器人
+    lore:
+    - 可以帮助你完成精密任务的微型机器人
+  ntw_advanced_nanobots:
+    name: 高级纳米机器人
+    lore:
+    - 可以帮助你完成精密任务的微型机器人
+    - 比简易版更智能，更高效
+  ntw_ai_core:
+    name: 人工智能核心
+    lore:
+    - 在脆弱外壳中的初代人工智能
+  ntw_empowered_ai_core:
+    name: 充能人工智能核心
+    lore:
+    - 在外壳中的高级人工智能
+  ntw_pristine_ai_core:
+    name: 古代人工智能核心
+    lore:
+    - 据说是从上古遗迹中挖掘出来的
+    - 完美级人工智能
+  ntw_interdimensional_presence:
+    name: 跨跃维度的存在
+    lore:
+    - 这种完美级的人工智能
+    - 甚至还掌握了跨越维度的能力
+  ntw_controller:
+    name: 网络控制器
+    lore:
+    - 网络控制器是网络的核心部分
+    - 每个网络最多有1个控制器
+  ntw_bridge:
+    name: 网桥
+    lore:
+    - 网桥用于连接不同的网络物品
+    - 来形成一个完整的网络
+  ntw_monitor:
+    name: 网络监视器
+    lore:
+    - 网络监视器可以与附近的方块交互
+    - 让指定方块可以接入网络
+    - ''
+    - 目前支持
+    - 无尽科技 - 存储单元
+    - 网络 - 量子存储
+  ntw_import:
+    name: 网络入口
+    lore:
+    - 网络入口会将其中的物品送入网络中
+    - 每个SF tick可传输最多9组物品
+    - 可接收来自货运网络的物品
+  ntw_export:
+    name: 网络出口
+    lore:
+    - 网络出口可以设置成
+    - 持续将1组指定的物品送出网络
+    - 可以使用货运网络从中提取物品
+  ntw_grabber:
+    name: 网络抓取器
+    lore:
+    - 网络抓取器会尝试从
+    - 指定的机器中抓取第一个物品
+  ntw_pusher:
+    name: 网络推送器
+    lore:
+    - 网络推送器会尝试将
+    - 指定的物品送入机器中
+  ntw_control_x:
+    name: 网络剪切器
+    lore:
+    - 网络剪切器会尝试将
+    - 方块从世界中"剪切"到网络中
+    - 仅支持原版非容器方块
+    - ''
+    aditional_lore:
+    - '{0}网络电力消耗: {1}每次操作 {2}J'
+  ntw_control_v:
+    name: 网络粘贴器
+    lore:
+    - 网络粘贴器会尝试将
+    - 方块从网络中"粘贴"到世界中
+    - 仅支持原版方块
+    - ''
+    aditional_lore:
+    - '{0}网络电力消耗: {1}每次操作 {2}J'
+  ntw_vacuum:
+    name: 网络吸尘器
+    lore:
+    - 网络吸尘器可以将周围
+    - 4x4范围内的掉落物品吸收
+    - 然后尝试将这些物品送入网络中
+    - ''
+    aditional_lore:
+    - '{0}网络电力消耗: {1}{2}J/粘液刻'
+  ntw_vanilla_grabber:
+    name: 网络原版容器抓取器
+    lore:
+    - 网络原版容器抓取器会尝试
+    - 抓取指定原版容器中的第一个物品.
+    - ''
+    - 该机器不能与网络直接交互,
+    - 你还需要一个网络抓取器
+    - 将本机器中的物品输入到网络中.
+  ntw_vanilla_pusher:
+    name: 网络原版容器推送器
+    lore:
+    - 网络原版容器推送器会尝试
+    - 推送其中的物品到指定原版容器中
+    - ''
+    - 该机器不能与网络直接交互,
+    - 你还需要一个网络推送器
+    - 将网络中的物品推送到本机器中.
+  ntw_network_wireless_transmitter:
+    name: 网络无线发射器
+    lore:
+    - 网络无线发射器可以
+    - 将其中的物品传输到绑定的
+    - 网络无线接收器中(只能在同一世界).
+    - 使用网络无线配置器来进行绑定.
+    - 每次传输会消耗 500 J 网络电力.
+  ntw_network_wireless_receiver:
+    name: 网络无线接收器
+    lore:
+    - 网络无线接收器可以
+    - 接收来自绑定的网络无线发射器
+    - 中的物品(只能在同一世界).
+    - 每粘液刻会把接收到的物品
+    - 尝试推送到网络中.
+  ntw_trash:
+    name: 网络清除器
+    lore:
+    - 网络清除器会从网络中
+    - 不断地移除指定物品
+    - 清除的物品会立即消失，谨慎使用!
+  ntw_grid:
+    name: 网格
+    lore:
+    - 网格允许你查看网络中所有的物品
+    - 你也可以直接放入或取出物品
+  ntw_crafting_grid:
+    name: 网格(带合成)
+    lore:
+    - 这种网格与普通网格类似
+    - 但会显示更少的物品
+    - 不过你可以直接使用网络中的物品
+    - 进行合成
+  ntw_cell:
+    name: 网络单元
+    lore:
+    - 网络单元拥有54格空间(相当于一个大箱子)
+    - 可以通过网络访问其中的物品
+    - 也可以直接打开
+  ntw_greedy_block:
+    name: 网络阻断器
+    lore:
+    - 网络阻断器可以设置一个物品,
+    - 然后会从网络各处输入中
+    - 收集指定的物品,最多为1组.
+    - 收集满后,会阻断该物品在网络中的传输,
+    - 任何其他网络方块都不会收到该物品.
+  ntw_quantum_workbench:
+    name: 网络量子工作台
+    lore:
+    - 可以合成量子存储
+  ntw_quantum_storage_1:
+    name: 网络量子存储 (4K)
+    lore:
+    - 可存储 4096 个物品
+    - ''
+    - 在量子奇点中存储大量物品
+  ntw_quantum_storage_2:
+    name: 网络量子存储 (32K)
+    lore:
+    - 可存储 32768 个物品
+    - ''
+    - 在量子奇点中存储大量物品
+  ntw_quantum_storage_3:
+    name: 网络量子存储 (262K)
+    lore:
+    - 可存储 262144 个物品
+    - ''
+    - 在量子奇点中存储大量物品
+  ntw_quantum_storage_4:
+    name: 网络量子存储 (2M)
+    lore:
+    - 可存储 2097152 个物品
+    - ''
+    - 在量子奇点中存储大量物品
+  ntw_quantum_storage_5:
+    name: 网络量子存储 (16M)
+    lore:
+    - 可存储 16777216 个物品
+    - ''
+    - 在量子奇点中存储大量物品
+  ntw_quantum_storage_6:
+    name: 网络量子存储 (134M)
+    lore:
+    - 可存储 134217728 个物品
+    - ''
+    - 在量子奇点中存储大量物品
+  ntw_quantum_storage_7:
+    name: 网络量子存储 (1B)
+    lore:
+    - 可存储 1073741824 个物品
+    - ''
+    - 在量子奇点中存储大量物品
+  ntw_quantum_storage_8:
+    name: 网络量子存储 (∞)
+    lore:
+    - 可存储几乎无限多个物品
+    - ''
+    - 在量子奇点中存储大量物品
+  ntw_capacitor_1:
+    name: 网络电容 (1)
+    lore:
+    - 网络电容可以接收来自
+    - 能源网络的电力并存储起来
+    - 以供其他网络设备使用
+    - ''
+    aditional_lore:
+    - '{0}容量: {1}{2}'
+  ntw_capacitor_2:
+    name: 网络电容 (2)
+    lore:
+    - 网络电容可以接收来自
+    - 能源网络的电力并存储起来
+    - 以供其他网络设备使用
+    - ''
+    aditional_lore:
+    - '{0}容量: {1}{2}'
+  ntw_capacitor_3:
+    name: 网络电容 (3)
+    lore:
+    - 网络电容可以接收来自
+    - 能源网络的电力并存储起来
+    - 以供其他网络设备使用
+    - ''
+    aditional_lore:
+    - '{0}容量: {1}{2}'
+  ntw_capacitor_4:
+    name: 网络电容 (4)
+    lore:
+    - 网络电容可以接收来自
+    - 能源网络的电力并存储起来
+    - 以供其他网络设备使用
+    - ''
+    aditional_lore:
+    - '{0}容量: {1}{2}'
+  ntw_power_outlet_1:
+    name: 网络插口 (1)
+    lore:
+    - 网络插口可以将网络中存储的电力
+    - 传输回电力网络中
+    - 将网络插口理解为发电机
+    - ''
+    - 会有 20% 的损耗.
+    - ''
+    aditional_lore:
+    - '{0}可存储: {1}{2}J'
+  ntw_power_outlet_2:
+    name: 网络插口 (2)
+    lore:
+    - 网络插口可以将网络中存储的电力
+    - 传输回电力网络中.
+    - 将网络插口理解为发电机.
+    - ''
+    - 会有 20% 的损耗.
+    - ''
+    aditional_lore:
+    - '{0}可存储: {1}{2}J'
+  ntw_power_display:
+    name: 网络电表
+    lore:
+    - 网络电表会显示网络中的电力情况
+    - 很简单, 对吧?
+  ntw_recipe_encoder:
+    name: 网络配方编码器
+    lore:
+    - 可以根据输入的物品来制作合成蓝图
+    - ''
+    aditional_lore:
+    - '{0}网络电力消耗: {1}{2} 每次编码'
+  ntw_auto_crafter:
+    name: 网络自动合成机
+    lore:
+    - 网络自动合成机需要合成蓝图才能工作。
+    - 当网络中没有蓝图的目标物品时，
+    - 机器会自动从网络中选取材料进行合成
+    - (需要网络中有足够的原材料)
+    - ''
+    aditional_lore:
+    - '{0}网络电力消耗: {1}{2} 每次合成'
+  ntw_auto_crafter_withholding:
+    name: 网络自动合成机 (预留版)
+    lore:
+    - 网络自动合成机需要合成蓝图才能工作。
+    - 当网络中没有蓝图的目标物品时，
+    - 机器会自动从网络中选取材料进行合成
+    - (需要网络中有足够的原材料)
+    - ''
+    - 预留版的自动合成机会不断进行合成
+    - 直到输出栏拥有1组物品
+    - 这一组物品可以在网络中访问
+    - 也可以通过货运系统取出
+    - ''
+    aditional_lore:
+    - '{0}网络电力消耗: {1}{2} 每次合成'
+  ntw_crafting_blueprint:
+    name: 合成蓝图
+    lore:
+    - 一张空白的蓝图
+    - 可以存储一个合成配方
+    aditional_lore:
+    - ''
+  ntw_probe:
+    name: 网络探测器
+    lore:
+    - 右键点击网络控制器
+    - 可以查看网络中的节点数量
+    aditional_lore:
+    - ''
+  ntw_remote:
+    name: 网络远程访问器
+    lore:
+    - 远程打开绑定的网格
+    - 需要加载网格所在区块
+    - ''
+    aditional_lore:
+    - '{0}Shift+右键点击 {1}普通网格以进行绑定'
+    - '{0}范围: {1}格'
+  ntw_remote_empowered:
+    name: 充能网络远程访问器
+    lore:
+    - 远程打开绑定的网格
+    - 需要加载网格所在区块
+    - ''
+    aditional_lore:
+    - '{0}Shift+右键点击 {1}普通网格以进行绑定'
+    - '{0}范围: {1}格'
+  ntw_remote_pristine:
+    name: 古代网络远程访问器
+    lore:
+    - 远程打开绑定的网格
+    - 需要加载网格所在区块
+    - ''
+    aditional_lore:
+    - '{0}Shift+右键点击 {1}普通网格以进行绑定'
+    - '{0}范围: {1}无限制(仅同一世界)'
+  ntw_remote_ultimate:
+    name: 终极网络远程访问器
+    lore:
+    - 远程打开绑定的网格
+    - 需要加载网格所在区块
+    - ''
+    aditional_lore:
+    - '{0}Shift+右键点击 {1}普通网格以进行绑定'
+    - '{0}范围: {1}跨维度'
+  ntw_crayon:
+    name: 网络绘制器
+    lore:
+    - 当对着网络控制器使用时
+    - 可以让该网络中的方块展示出粒子效果
+    - ''
+    aditional_lore:
+    - ''
+  ntw_configurator:
+    name: 网络配置器
+    lore:
+    - 用于复制网络部件的设置
+    - 可复制带方向选择的网络方块的设置
+    - ''
+    aditional_lore:
+    - '{0}右键点击: {1}应用设置'
+    - '{0}右键点击: {1}存储设置'
+  ntw_wireless_configurator:
+    name: 网络无线配置器
+    lore:
+    - 用于储存一个接收器的位置,
+    - 并设置到发射器中.
+    - ''
+    aditional_lore:
+    - '{0}右键点击: {1}储存接收器的位置'
+    - '{2}Shift+右键点击: {3}将位置设置到发射器中'
+  ntw_rake_1:
+    name: 网络扳手 (1)
+    lore:
+    - 右键点击一个网络节点
+    - 可以立即破坏
+    - ''
+    aditional_lore:
+    - ''
+  ntw_rake_2:
+    name: 网络扳手 (2)
+    lore:
+    - 右键点击一个网络节点
+    - 可以立即破坏
+    - ''
+    aditional_lore:
+    - ''
+  ntw_rake_3:
+    name: 网络扳手 (3)
+    lore:
+    - 右键点击一个网络节点
+    - 可以立即破坏
+    - ''
+    aditional_lore:
+    - ''
+  ntw_debug_stick:
+    name: 网络调试棒
+    lore:
+    - 右键点击一个网络方块开启调试。
+    aditional_lore:
+    - ''
+
+messages:
+  need_guizhanlib_plugin: |
+    "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!"
+    "从此处下载: https://50l.cc/gzlib"
+  need_netheo_plugin_update: 你必须更新下界乌托邦才能让网络添加相关功能。
+  need_slimehud_plugin_update: 你必须更新 SlimeHUD 才能让网络添加相关功能。
+  hand_item_must_quantum_storage: 你必须手持量子存储
+  corrupted_quantum_storage: 量子存储未指定物品或已损坏
+  item_updated: 已更新物品
+  empty: '空'
+  cannot_instantiate_class: Cannot instantiate class
+  none: 无
+  holding: 物品
+  amount: 数量
+  documentation_wiki: 附属 Wiki
+  documentation_wiki_lore:
+  - 点击获取网络的 Wiki 链接
+  click_view_wiki: 单击此处访问Wiki
+  previous_page: 上一页
+  next_page: 下一页
+  change_sorting: 更改排序方式
+  set_filter: 设置过滤器 (右键点击以清除)
+  type_to_filter: 请输入你想要过滤的物品名称(显示名)或类型
+  filter_applied: 已启用过滤器
+  format_amount: '{0}数量: {1}{2}'
+  craft: 合成
+  try_craft: 合成
+  left_click: 左键点击
+  try_return_items: 将合成台内物品送回网络
+  debug_for_item_set_to: 该方块的调试模式已设置为
+  last_restart_off: 该模式将持续至服务器关闭，或者手动关闭。
+  craft_blueprint: 合成蓝图
+  output: 输出
+  output_slot: 输出栏
+  input: 输入
+  already_has_controller: 输出
+  paste_match_template: 粘贴物品模版
+  cut_match_template: 剪切物品模版
+  cut_empty: 留空将剪切任何方块
+  direction: 设置朝向
+  set_direction: 设置朝向
+  open_target_block: 打开目标方块
+  blank_blueprint: 空白蓝图
+  click_to_encode: 点击此处进行编码
+  not_enough_network_power_fulfill_task: 网络中的电力不足，无法完成该任务
+  output_slot_empty: 需要清空输出栏
+  provide_blank_blueprint: 你需要提供一个空的合成蓝图
+  doesnot_look_valid_recipe: 这似乎不是一个有效的配方
+  export_matching: 指定输出物品
+  import_matching: 需要阻断的物品
+  purge_matching: 指定需要清除的物品
+  push_matching: 指定需要推送的物品
+  placement_would_connect_two_controllers: This placement would connect two controllers!
+  status: 状态
+  disconnected: 未连接
+  item_stored: 当前存储的物品
+  no_registered_item: 未指定物品
+  click_icon_to_register0: 拿起物品并点击下方的按钮
+  click_icon_to_register1: 以设置量子存储保存的物品
+  set_item: 设置
+  drag_top_pane_register: 拿起物品并点击这里以设置物品
+  change_void: 切换满载清空输入
+  quantum_empty_before_change: 量子存储必须为空才能更换物品
+  voiding: 满载清空输入
+  click_entangle: 点击进行量子纠缠
+  whildchest_detected: WildChests 已安装
+  whildchest_detected_as_chest: 该方块是否被 WildChest 判断为方块：
+  whildchest_test_failed: WildChest 测试失败！
+  whildchest_test_passed: WildChest 测试通过。
+  received_items: 接收的物品
+  transmit_items_matching: 发送的物品
+  still_cooldown: This is still on cooldown
+  assigned_recipe: 已指定配方
+  nothing: 空
+  outputting: 输出物品
+  debug_op: 该物品只能由 OP 玩家使用。
+  unstack_cards_before: 请单独拿出一张内存卡，不要堆叠
+  cards_cannot_stored: 该物品无法存储至内存卡中
+  cards_must_empty_assign: 只有空内存卡才能分配物品
+  must_target_direcional: 你必须指向一个带方向选择的网络方块
+  directional_not_have_set: 该方块没有指定朝向
+  config_copied: 已复制设置
+  crayon_removed: 已关闭网络绘制
+  crayon_added: 已开启网络绘制
+  network_sumary: '         网络 - 组件统计        '
+  bridges: 网桥
+  monitors: 网络监测器
+  importers: 网络入口
+  exportes: 网络出口
+  grids: 网格
+  cells: 网络单元
+  wipers: 网络内存清除器
+  grabbers: 网络抓取器
+  puschers: 网络粘贴器
+  cutters: 网络剪切器
+  pasters: 网络粘贴器
+  vacuums: 网络吸尘器
+  purgers: 网络清除器
+  crafters: 网络自动合成机
+  power_nodes: 网络能源节点
+  power_outlets: 网络插口
+  power_displays: 网络电表
+  encoders: 网络配方编码器
+  greedy_blocks: 网络阻断器
+  wireless_transmitters: 网络无线发射器
+  wireless_receivers: 网络无线接收器
+  distinct_items: 物品类型数量
+  total_items: 累计物品数量
+  root_power: 总电量
+  total_nodes: 累计节点
+  warning: 警告
+  error: 错误
+  passive: ""
+  notice: "通知"
+  success: "成功"
+  main: "网络"
+  click_info: "单击此处"
+  research: "研究"
+  crafting: "合成材料"
+  machine: "机器"
+  tool: "工具"
+  mechanism: "装置"
+  fuel: "染料"
+  material_class: "材料"
+  recipe_type: "配方类型"
+  guide: "指南"
+  maximum_node_limit: 该网络已达到最大节点数量限制，部分节点可能会无法正常工作。请减少网络节点的数量。
+  set_to_grid: 必须连接到一个网格 (不能是带合成的)
+  bound_to_remote: 网格已绑定至远程访问器
+  bound_not_loaded: 绑定的网格所在区块没有加载
+  bound_not_reach: 绑定的网格不在范围内
+  remote_not_bound: 该远程访问器没有绑定网格
+  bound_not_found: 无法找到绑定的网格
+  must_target_wireless_block: 必须对着网络无线方块使用。
+  no_wireless_been_set: 需要先设置接收器位置。
+  wireless_different_world: 网络无线接收器在不同的世界中。
+  wireless_transmitters_location: 已设置网络无线发射器。
+  wireless_been_set: 已存储网络无线接收器的位置。
+  networks: 网络 (Networks)
+  crafting_materials: 合成材料
+  network_management_tools: 网络管理工具
+  network_items: 网络物品
+  network_quantum_storage_devices: 量子存储设备
+  disabled_items: 已禁用/移除的物品
+  not_supplied: Not supplied
+  successfully_applied: Successfully applied
+  item: Item
+  items: Items
+  item_added_filter: Item added into filter
+  not_enough_item_filter: Not enough items to fill filter
+  no_item_stored_config: No item in stored config
+  no_items_stored_config: No items in stored config
+  unknown_error: 未知/错误
+  current_network_charge: 网络电力

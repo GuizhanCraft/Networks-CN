@@ -11,6 +11,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import net.guizhanss.slimefun4.utils.WikiUtils;
+import net.guizhanss.guizhanlib.localization.Localization;
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.AdvancedPie;
 import org.bukkit.plugin.PluginManager;
@@ -35,6 +36,9 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
     private ListenerManager listenerManager;
     private SupportedPluginManager supportedPluginManager;
 
+    // store localization/translation instance
+    private static LocalizationHelper localization = null;
+
     public Networks() {
         this.username = "SlimefunGuguProject";
         this.repo = "Networks";
@@ -46,8 +50,7 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
         instance = this;
 
         if (!getServer().getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
-            getLogger().log(Level.SEVERE, "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!");
-            getLogger().log(Level.SEVERE, "从此处下载: https://50l.cc/gzlib");
+            getLogger().log(Level.SEVERE, Networks.getLocalization().getMessage("need_guizhanlib_plugin"));
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
@@ -83,16 +86,30 @@ public class Networks extends JavaPlugin implements SlimefunAddon {
             try {
                 NetheoPlants.setup();
             } catch (NoClassDefFoundError e) {
-                getLogger().severe("你必须更新下界乌托邦才能让网络添加相关功能。");
+                getLogger().severe(Networks.getLocalization().getMessage("need_netheo_plugin_update"));
             }
         }
         if (supportedPluginManager.isSlimeHud()) {
             try {
                 HudCallbacks.setup();
             } catch (NoClassDefFoundError e) {
-                getLogger().severe("你必须更新 SlimeHUD 才能让网络添加相关功能。");
+                getLogger().severe(Networks.getLocalization().getMessage("need_slimehud_plugin_update"));
             }
         }
+    }
+
+    /***
+     * get localization instance
+     * 
+     * @return
+     */
+    public static LocalizationHelper getLocalization() {
+        if (localization == null) {
+            localization = new LocalizationHelper(instance);
+            localization.addLanguage(instance.getConfig().getString("lang"));
+        }
+
+        return localization;
     }
 
     public void setupMetrics() {

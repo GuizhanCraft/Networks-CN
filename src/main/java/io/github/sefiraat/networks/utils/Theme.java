@@ -1,5 +1,6 @@
 package io.github.sefiraat.networks.utils;
 
+import io.github.sefiraat.networks.Networks;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import lombok.Getter;
@@ -16,22 +17,22 @@ import java.util.List;
 
 @Getter
 public enum Theme {
-    WARNING(ChatColor.YELLOW, "警告"),
-    ERROR(ChatColor.RED, "错误"),
-    NOTICE(ChatColor.WHITE, "通知"),
-    PASSIVE(ChatColor.GRAY, ""),
-    SUCCESS(ChatColor.GREEN, "成功"),
-    MAIN(ChatColor.of("#21588f"), "网络"),
-    CLICK_INFO(ChatColor.of("#e4ed32"), "单击此处"),
-    RESEARCH(ChatColor.of("#a60e03"), "研究"),
-    CRAFTING(ChatColor.of("#dbcea9"), "合成材料"),
-    MACHINE(ChatColor.of("#3295a8"), "机器"),
-    TOOL(ChatColor.of("#6b32a8"), "工具"),
-    MECHANISM(ChatColor.of("#3295a8"), "装置"),
-    FUEL(ChatColor.of("#112211"), "染料"),
-    MATERIAL_CLASS(ChatColor.of("#a4c2ba"), "材料"),
-    RECIPE_TYPE(ChatColor.of("#ffe89c"), "配方类型"),
-    GUIDE(ChatColor.of("#444444"), "指南");
+    WARNING(ChatColor.YELLOW, Networks.getLocalization().getMessage("warning")),
+    ERROR(ChatColor.RED, Networks.getLocalization().getMessage("error")),
+    NOTICE(ChatColor.WHITE, Networks.getLocalization().getMessage("notice")),
+    PASSIVE(ChatColor.GRAY, Networks.getLocalization().getMessage("passive")),
+    SUCCESS(ChatColor.GREEN, Networks.getLocalization().getMessage("success")),
+    MAIN(ChatColor.of("#21588f"), Networks.getLocalization().getMessage("main")),
+    CLICK_INFO(ChatColor.of("#e4ed32"), Networks.getLocalization().getMessage("click_info")),
+    RESEARCH(ChatColor.of("#a60e03"), Networks.getLocalization().getMessage("research")),
+    CRAFTING(ChatColor.of("#dbcea9"), Networks.getLocalization().getMessage("crafting")),
+    MACHINE(ChatColor.of("#3295a8"), Networks.getLocalization().getMessage("machine")),
+    TOOL(ChatColor.of("#6b32a8"), Networks.getLocalization().getMessage("tool")),
+    MECHANISM(ChatColor.of("#3295a8"), Networks.getLocalization().getMessage("mechanism")),
+    FUEL(ChatColor.of("#112211"), Networks.getLocalization().getMessage("fuel")),
+    MATERIAL_CLASS(ChatColor.of("#a4c2ba"), Networks.getLocalization().getMessage("material_class")),
+    RECIPE_TYPE(ChatColor.of("#ffe89c"), Networks.getLocalization().getMessage("recipe_type")),
+    GUIDE(ChatColor.of("#444444"), Networks.getLocalization().getMessage("guide"));
 
     @Getter
     protected static final Theme[] cachedValues = values();

@@ -3,6 +3,8 @@ package io.github.sefiraat.networks.slimefun.network;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.utils.Theme;
+import io.github.thebusybiscuit.slimefun4.api.network.Network;
+
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -26,9 +28,9 @@ public interface AdminDebuggable {
         final boolean isDebug = isDebug(location);
         final boolean nextState = !isDebug;
         setDebug(location, nextState);
-        player.sendMessage(Theme.SUCCESS + "该方块的调试模式已设置为：" + nextState + "。");
+        player.sendMessage(Theme.SUCCESS + Networks.getLocalization().getMessage("debug_for_item_set_to") + "：" + nextState + "。");
         if (nextState) {
-            player.sendMessage(Theme.SUCCESS + "该模式将持续至服务器关闭，或者手动关闭。");
+            player.sendMessage(Theme.SUCCESS + Networks.getLocalization().getMessage("last_restart_off"));
         }
     }
 

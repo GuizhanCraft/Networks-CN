@@ -3,6 +3,7 @@ package io.github.sefiraat.networks.slimefun.network;
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.NodeType;
 import io.github.sefiraat.networks.network.stackcaches.ItemRequest;
@@ -42,7 +43,7 @@ public class NetworkPurger extends NetworkObject {
 
     private static final CustomItemStack TEST_BACKDROP_STACK = new CustomItemStack(
         Material.GREEN_STAINED_GLASS_PANE,
-        Theme.SUCCESS + "指定需要清除的物品"
+        Theme.SUCCESS + Networks.getLocalization().getMessage("purge_matching")
     );
 
     private final ItemSetting<Integer> tickRate;

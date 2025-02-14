@@ -4,6 +4,7 @@ import com.xzavier0722.mc.plugin.slimefun4.storage.callback.IAsyncReadCallback;
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import de.jeff_media.morepersistentdatatypes.DataType;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.slimefun.network.grid.NetworkGrid;
 import io.github.sefiraat.networks.utils.Keys;
 import io.github.sefiraat.networks.utils.Theme;
@@ -15,6 +16,8 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
@@ -55,7 +58,7 @@ public class NetworkRemote extends SlimefunItem {
                             ) {
                                 setGrid(e.getItem(), block, player);
                             } else {
-                                player.sendMessage(Theme.ERROR + "必须连接到一个网格 (不能是带合成的)");
+                                player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("set_to_grid"));
                             }
                         }
                     } else {
@@ -70,7 +73,7 @@ public class NetworkRemote extends SlimefunItem {
         final ItemMeta itemMeta = itemStack.getItemMeta();
         DataTypeMethods.setCustom(itemMeta, KEY, DataType.LOCATION, block.getLocation());
         itemStack.setItemMeta(itemMeta);
-        player.sendMessage(Theme.SUCCESS + "网格已绑定至远程访问器");
+        player.sendMessage(Theme.SUCCESS + Networks.getLocalization().getMessage("bound_to_remote"));
     }
 
     public static void tryOpenGrid(@Nonnull ItemStack itemStack, @Nonnull Player player, int range) {
@@ -80,7 +83,7 @@ public class NetworkRemote extends SlimefunItem {
         if (location != null) {
 
             if (!location.getWorld().isChunkLoaded(location.getBlockX() / 16, location.getBlockZ() / 16)) {
-                player.sendMessage(Theme.ERROR + "绑定的网格所在区块没有加载");
+                player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("bound_not_loaded"));
                 return;
             }
 
@@ -92,10 +95,10 @@ public class NetworkRemote extends SlimefunItem {
             ) {
                 openGrid(location, player);
             } else {
-                player.sendMessage(Theme.ERROR + "绑定的网格不在范围内");
+                player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("bound_not_reach"));
             }
         } else {
-            player.sendMessage(Theme.ERROR + "该远程访问器没有绑定网格");
+            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("remote_not_bound"));
         }
     }
 
@@ -103,7 +106,7 @@ public class NetworkRemote extends SlimefunItem {
         SlimefunBlockData blockData = StorageCacheUtils.getBlock(location);
 
         if(blockData == null) {
-            player.sendMessage(Theme.ERROR + "无法找到绑定的网格");
+            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("bound_not_found"));
         }
         else {
             StorageCacheUtils.executeAfterLoad(blockData, () -> {
@@ -111,7 +114,7 @@ public class NetworkRemote extends SlimefunItem {
                     && Slimefun.getProtectionManager().hasPermission(player, location, Interaction.INTERACT_BLOCK)) {
                     blockData.getBlockMenu().open(player);
                 } else {
-                    player.sendMessage(Theme.ERROR + "无法找到绑定的网格");
+                    player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("bound_not_found"));
                 }
             }, false);
         }

@@ -2,6 +2,7 @@ package io.github.sefiraat.networks.slimefun.network;
 
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NetworkRoot;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.NodeType;
@@ -52,11 +53,11 @@ public class NetworkAutoCrafter extends NetworkObject {
     private static final int OUTPUT_SLOT = 16;
 
     public static final CustomItemStack BLUEPRINT_BACKGROUND_STACK = new CustomItemStack(
-        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + "合成蓝图"
+        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + Networks.getLocalization().getMessage("craft_blueprint")
     );
 
     public static final CustomItemStack OUTPUT_BACKGROUND_STACK = new CustomItemStack(
-        Material.GREEN_STAINED_GLASS_PANE, Theme.PASSIVE + "输出"
+        Material.GREEN_STAINED_GLASS_PANE, Theme.PASSIVE + Networks.getLocalization().getMessage("output")
     );
 
     private final int chargePerCraft;

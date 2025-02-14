@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.slimefun.network;
 
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NetworkRoot;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.NodeType;
@@ -49,11 +50,11 @@ public class NetworkEncoder extends NetworkObject {
     private static final int CHARGE_COST = 20000;
 
     public static final CustomItemStack BLUEPRINT_BACK_STACK = new CustomItemStack(
-        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + "空白蓝图"
+        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + Networks.getLocalization().getMessage("blank_blueprint")
     );
 
     public static final CustomItemStack ENCODE_STACK = new CustomItemStack(
-        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + "点击此处进行编码"
+        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + Networks.getLocalization().getMessage("click_to_encode")
     );
 
     public NetworkEncoder(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -110,21 +111,21 @@ public class NetworkEncoder extends NetworkObject {
         final long networkCharge = root.getRootPower();
 
         if (networkCharge < CHARGE_COST) {
-            player.sendMessage(Theme.WARNING + "网络中的电力不足，无法完成该任务");
+            player.sendMessage(Theme.WARNING + Networks.getLocalization().getMessage("not_enough_network_power_fulfill_task"));
             return;
         }
 
         final ItemStack outputStack = blockMenu.getItemInSlot(OUTPUT_SLOT);
 
         if (outputStack != null && outputStack.getType() != Material.AIR) {
-            player.sendMessage(Theme.WARNING + "需要清空输出栏");
+            player.sendMessage(Theme.WARNING + Networks.getLocalization().getMessage("output_slot_empty"));
             return;
         }
 
         ItemStack blueprint = blockMenu.getItemInSlot(BLANK_BLUEPRINT_SLOT);
 
         if (!(SlimefunItem.getByItem(blueprint) instanceof CraftingBlueprint)) {
-            player.sendMessage(Theme.WARNING + "你需要提供一个空的合成蓝图");
+            player.sendMessage(Theme.WARNING + Networks.getLocalization().getMessage("provide_blank_blueprint"));
             return;
         }
 
@@ -157,7 +158,7 @@ public class NetworkEncoder extends NetworkObject {
 
         // If no item crafted OR result doesn't fit, escape
         if (crafted.getType() == Material.AIR) {
-            player.sendMessage(Theme.WARNING + "这似乎不是一个有效的配方");
+            player.sendMessage(Theme.WARNING + Networks.getLocalization().getMessage("doesnot_look_valid_recipe"));
             return;
         }
 

@@ -1,0 +1,698 @@
+categories:
+  ash: asdasd2
+
+items:
+  ntw_stone_chunk_seed:
+    name: Stone Chunk Seed
+    lore:
+    - This seed, when fully grown, will
+    - provide Stone Chunks when
+    - harvested.
+    aditional_lore:
+    - Nether Grass (or better)
+  ntw_synthetic_seed:
+    name: Synthetic Seed
+    lore:
+    - This seed does nothing.
+    aditional_lore:
+    - Nether Grass (or better)
+  ntw_synthetic_emerald_seed:
+    name: Synthetic Emerald Seed
+    lore:
+    - This seed, when fully grown, will
+    - provide Synthetic Emeralds when
+    - harvested.
+    aditional_lore:
+    - Voracious Dirt (or better)
+  ntw_synthetic_diamond_seed:
+    name: Synthetic Diamond Seed
+    lore:
+    - This seed, when fully grown, will
+    - provide Synthetic Diamonds when
+    - harvested.
+    aditional_lore:
+    - Voracious Dirt (or better)
+  ntw_fragmented_seed:
+    name: Fragmented Seed
+    lore:
+    - This seed, when fully grown, will
+    - provide Synthetic Emerald Shards when
+    - harvested.
+    aditional_lore:
+    - Voracious Dirt (or better)
+  quantum_workbench:
+    name: Quantum Workbench
+    lore:
+    - Crafted using the Quantum Workbench
+  
+  ntw_synthetic_emerald_shard:
+    name: Synthetic Emerald Shard
+    lore:
+    - A shard of synthetic emerald that
+    - is the backbone for information
+    - transference.
+  ntw_optic_glass:
+    name: Optic Glass
+    lore:
+    - A simple glass that is able to
+    - transfer small bits of information.
+  ntw_optic_cable:
+    name: Optic Cable
+    lore:
+    - A simple wire that is able to
+    - transfer large bits of information.
+  ntw_optic_star:
+    name: Optic Star
+    lore:
+    - A crystalline star structure that
+    - can transfer large bits of information.
+  ntw_radioactive_optic_star:
+    name: Radioactive Optic Star
+    lore:
+    - A crystalline star structure that
+    - can store insane amounts of information.
+  ntw_shrinking_base:
+    name: Shrinking Base
+    lore:
+    - An advanced construct able to make
+    - big things go small.
+  ntw_simple_nanobots:
+    name: Simple Nanobots
+    lore:
+    - Teeny Tiny little bots that can
+    - help you with precise tasks.
+  ntw_advanced_nanobots:
+    name: Advanced Nanobots
+    lore:
+    - Teeny Tiny little bots that can
+    - help you with precise tasks.
+    - This version is smarter and faster.
+  ntw_ai_core:
+    name: A.I. Core
+    lore:
+    - A burgeoning artificial intelligence
+    - resides within this weak shell.
+  ntw_empowered_ai_core:
+    name: Empowered A.I. Core
+    lore:
+    - A flourishing artificial intelligence
+    - resides within this shell.
+  ntw_pristine_ai_core:
+    name: Pristine A.I. Core
+    lore:
+    - A perfected artificial intelligence
+    - resides within this defined shell.
+  ntw_interdimensional_presence:
+    name: Interdimensional Presence
+    lore:
+    - An artificial intelligence that has
+    - grown too powerful for just a
+    - single dimension.
+  ntw_controller:
+    name: Network Controller
+    lore:
+    - The Network controller is the brain
+    - for the whole network. Max 1 per network.
+  ntw_bridge:
+    name: Network Bridge
+    lore:
+    - The bridge allows you to cheaply
+    - connect network objects together.
+  ntw_monitor:
+    name: Network Monitor
+    lore:
+    - The Network Monitor allows simple
+    - import/export interaction with adjacent
+    - objects.
+    - ''
+    - 'Currently Supports:'
+    - Infinity Barrels
+    - Network Shells
+  ntw_import:
+    name: Network Importer
+    lore:
+    - The Network Importer brings any
+    - item inside it into the network, up
+    - to 9 stacks per SF tick.
+    - Accepts items in from cargo.
+  ntw_export:
+    name: Network Exporter
+    lore:
+    - The Network Exporter can be set to
+    - constantly export 1 stack of any
+    - given item.
+    - Accepts item withdrawal from cargo.
+  ntw_grabber:
+    name: Network Grabber
+    lore:
+    - The Network Grabber will try
+    - to grab the first item it finds
+    - from within the selected machine.
+  ntw_pusher:
+    name: Network Pusher
+    lore:
+    - The Network Pusher will try
+    - to push a matching item from a
+    - given item into the chosen machine.
+  ntw_control_x:
+    name: 'Network Control: X'
+    lore:
+    - 'The Network Control: X will try'
+    - to 'cut' a block out of the world
+    - and put it into the Network.
+    - Only works on Vanilla blocks without
+    - inventories.
+    - ''
+    aditional_lore:
+    - '{0}Network Drain: {1}{2}/cut'
+  ntw_control_v:
+    name: 'Network Control: V'
+    lore:
+    - 'The Network Control: V will try'
+    - to 'paste' a block from the Network
+    - into the world.
+    - Only works with Vanilla blocks.
+    - ''
+    aditional_lore:
+    - '{0}Network Drain: {1}{2}/paste'
+  ntw_vacuum:
+    name: Network Vacuum
+    lore:
+    - The Network Vacuum will suck
+    - items into itself within a
+    - 4 x 4 range centered on itself.
+    - Vacuumed items will try to push
+    - into the Network.
+    - ''
+    aditional_lore:
+    - '{0}Network Drain: {1}{2}/tick'
+  ntw_vanilla_grabber:
+    name: Network Vanilla Grabber
+    lore:
+    - The Network Vanilla Pusher will try
+    - to grab the first possible item from
+    - the chosen vanilla inventory.
+    - You need to grab items from this
+    - node using a Grabber.
+  ntw_vanilla_pusher:
+    name: Network Vanilla Pusher
+    lore:
+    - The Network Vanilla Pusher will try
+    - to push any item inside itself into
+    - the chosen vanilla inventory.
+    - You need to push items into this
+    - node from a Pusher.
+  ntw_network_wireless_transmitter:
+    name: Network Wireless Transmitter
+    lore:
+    - The Network Wireless Transmitter will
+    - try to transmit any item inside itself
+    - to a linked Network Wireless Receiver
+    - located within the same world.
+    - Use the Wireless Configurator to
+    - setup the Wireless Transmitter.
+    - Requires 500 Network Power per transfer.
+  ntw_network_wireless_receiver:
+    name: Network Wireless Receiver
+    lore:
+    - The Network Wireless Receiver is
+    - able to receive items from a linked
+    - wireless transmitter located within
+    - the same world.
+    - It will try to push received items
+    - into the Network each tick.
+  ntw_trash:
+    name: Network Purger
+    lore:
+    - The Network Purger will pull
+    - matching items from the network
+    - and instantly void them.
+    - Use with great care!
+  ntw_grid:
+    name: Network Grid
+    lore:
+    - The Network Grid shows you all
+    - the items you have in the network
+    - and lets you insert or withdraw
+    - directly.
+  ntw_crafting_grid:
+    name: Network Crafting Grid
+    lore:
+    - The Network Crafting Grid acts
+    - like a normal grid but displays less
+    - items but allows crafting using items
+    - directly from the network.
+  ntw_cell:
+    name: Network Cell
+    lore:
+    - The Network Cell is a large
+    - (double chest) inventory that can
+    - be accessed both from the network
+    - and in the world.
+  ntw_greedy_block:
+    name: Network Greedy Block
+    lore:
+    - The Network Greedy Block can
+    - be set to one item which it will
+    - then greedily hold on to a single
+    - stack of. If more incoming items
+    - do not fit, they will not enter
+    - the network.
+  ntw_quantum_workbench:
+    name: Network Quantum Workbench
+    lore:
+    - Allows the crafting of Quantum Storages.
+  ntw_quantum_storage_1:
+    name: Network Quantum Storage (4K)
+    lore:
+    - Stores 4096 items
+    - ''
+    - Stores items in mass quantities within
+    - a quantum singularity.
+  ntw_quantum_storage_2:
+    name: Network Quantum Storage (32K)
+    lore:
+    - Stores 32768 items
+    - ''
+    - Stores items in mass quantities within
+    - a quantum singularity.
+  ntw_quantum_storage_3:
+    name: Network Quantum Storage (262K)
+    lore:
+    - Stores 262144 items
+    - ''
+    - Stores items in mass quantities within
+    - a quantum singularity.
+  ntw_quantum_storage_4:
+    name: Network Quantum Storage (2M)
+    lore:
+    - Stores 2097152 items
+    - ''
+    - Stores items in mass quantities within
+    - a quantum singularity.
+  ntw_quantum_storage_5:
+    name: Network Quantum Storage (16M)
+    lore:
+    - Stores 16777216 items
+    - ''
+    - Stores items in mass quantities within
+    - a quantum singularity.
+  ntw_quantum_storage_6:
+    name: Network Quantum Storage (134M)
+    lore:
+    - Stores 134217728 items
+    - ''
+    - Stores items in mass quantities within
+    - a quantum singularity.
+  ntw_quantum_storage_7:
+    name: Network Quantum Storage (1B)
+    lore:
+    - Stores 1073741824 items
+    - ''
+    - Stores items in mass quantities within
+    - a quantum singularity.
+  ntw_quantum_storage_8:
+    name: Network Quantum Storage (∞)
+    lore:
+    - Stores ∞ items... almost
+    - ''
+    - Stores items in mass quantities within
+    - a quantum singularity.
+  ntw_capacitor_1:
+    name: Network Capacitor (1)
+    lore:
+    - The Network Capacitor can take
+    - power in and store it for use
+    - within the network.
+    - ''
+    aditional_lore:
+    - '{0}Capacity: {1}{2}'
+  ntw_capacitor_2:
+    name: Network Capacitor (2)
+    lore:
+    - The Network Capacitor can take
+    - power in and store it for use
+    - within the network.
+    - ''
+    aditional_lore:
+    - '{0}Capacity: {1}{2}'
+  ntw_capacitor_3:
+    name: Network Capacitor (3)
+    lore:
+    - The Network Capacitor can take
+    - power in and store it for use
+    - within the network.
+    - ''
+    aditional_lore:
+    - '{0}Capacity: {1}{2}'
+  ntw_capacitor_4:
+    name: Network Capacitor (4)
+    lore:
+    - The Network Capacitor can take
+    - power in and store it for use
+    - within the network.
+    - ''
+    aditional_lore:
+    - '{0}Capacity: {1}{2}'
+  ntw_power_outlet_1:
+    name: Network Power Outlet (1)
+    lore:
+    - The Network Capacitor can take
+    - power from the Network to power
+    - machines or feed back into an
+    - EnergyNet network.
+    - ''
+    - Operates at a 20% loss rate.
+    - ''
+    aditional_lore:
+    - '{0}Max Transfer: {1}{2}'
+  ntw_power_outlet_2:
+    name: Network Power Outlet (2)
+    lore:
+    - The Network Capacitor can take
+    - power from the Network to power.
+    - machines or feed back into an.
+    - EnergyNet network..
+    - ''
+    - Operates at a 20% loss rate.
+    - ''
+    aditional_lore:
+    - '{0}Max Transfer: {1}{2}'
+  ntw_power_display:
+    name: Network Power Display
+    lore:
+    - The Network Power Display will
+    - display the power in the network.
+    - Simple, right?
+  ntw_recipe_encoder:
+    name: Network Recipe Encoder
+    lore:
+    - Used to form a Crafting Blueprint
+    - from input items.
+    - ''
+    aditional_lore:
+    - '{0}Network Drain: {1}{2}/encode'
+  ntw_auto_crafter:
+    name: Network Auto Crafter
+    lore:
+    - The Network Auto Crafter accepts
+    - a crafting blueprint. When the
+    - blueprint output item is requested
+    - while there is none in the network
+    - it will be crafted if you have
+    - materials.
+    - ''
+    aditional_lore:
+    - '{0}Network Drain: {1}{2}/craft'
+  ntw_auto_crafter_withholding:
+    name: Network Auto Crafter (Withholding)
+    lore:
+    - The Network Auto Crafter accepts
+    - a crafting blueprint. When the
+    - blueprint output item is requested
+    - while there is none in the network
+    - it will be crafted if you have
+    - materials.
+    - ''
+    - A Withholding Crafter will keep
+    - a stack in the output and stop
+    - crafting. The stack can been seen
+    - in the Network and also allows for
+    - cargo.
+    - ''
+    aditional_lore:
+    - '{0}Network Drain: {1}{2}/craft'
+  ntw_crafting_blueprint:
+    name: Crafting Blueprint
+    lore:
+    - A blank blueprint that can
+    - be used to store a crafting
+    - recipe.
+    aditional_lore:
+    - ''
+  ntw_probe:
+    name: Network Probe
+    lore:
+    - When used on a controller, this will
+    - show the nodes on the network.
+    aditional_lore:
+    - ''
+  ntw_remote:
+    name: Network Remote
+    lore:
+    - Opens a bound grid wirelessly.
+    - The grid must be chunk loaded.
+    - ''
+    aditional_lore:
+    - '{0}Shift+Right click {1}Normal grid for binding'
+    - '{0}Range: {1}{2}'
+  ntw_remote_empowered:
+    name: Network Remote Empowered
+    lore:
+    - Opens a bound grid wirelessly.
+    - The grid must be chunk loaded.
+    - ''
+    aditional_lore:
+    - '{0}Shift+Right click {1}Normal grid for binding'
+    - '{0}Range: {1}{2}'
+  ntw_remote_pristine:
+    name: Network Remote Pristine
+    lore:
+    - Opens a bound grid wirelessly.
+    - The grid must be chunk loaded.
+    - ''
+    aditional_lore:
+    - '{0}Shift+Right click {1}Normal grid for binding'
+    - '{0}Range: {1}Unlimited (same world only)'
+  ntw_remote_ultimate:
+    name: Network Remote Ultimate
+    lore:
+    - Opens a bound grid wirelessly.
+    - The grid must be chunk loaded.
+    - ''
+    aditional_lore:
+    - '{0}Shift+Right click {1}Normal grid for binding'
+    - '{0}Range: {1}Cross-dimensional'
+  ntw_crayon:
+    name: Network Crayon
+    lore:
+    - When used on a controller, this will
+    - enable particle display from specific
+    - blocks when working.
+    - ''
+    aditional_lore:
+    - ''
+  ntw_configurator:
+    name: Network Configurator
+    lore:
+    - Used to copy and paste the
+    - configurations of directional
+    - interfaces.
+    - ''
+    aditional_lore:
+    - '{0}Right Click: {1}Apply Config'
+    - '{0}Shift Right Click: {1}Store Config'
+  ntw_wireless_configurator:
+    name: Network Wireless Configurator
+    lore:
+    - Used to store a Receiver location
+    - and then to apply to a Transmitter
+    - ''
+    aditional_lore:
+    - '{0}Right Click: {1}Store Receiver Location'
+    - '{0}Shift Right Click: {1}Set Location to Transmitter'
+  ntw_rake_1:
+    name: Network Rake (1)
+    lore:
+    - Right click a Network Object to
+    - break it instantly.
+    - ''
+    aditional_lore:
+    - ''
+  ntw_rake_2:
+    name: Network Rake (2)
+    lore:
+    - Right click a Network Object to
+    - break it instantly.
+    - ''
+    aditional_lore:
+    - ''
+  ntw_rake_3:
+    name: Network Rake (3)
+    lore:
+    - Right click a Network Object to
+    - break it instantly.
+    - ''
+    aditional_lore:
+    - ''
+  ntw_debug_stick:
+    name: Network Debug Stick
+    lore:
+    - Right click a Network Object to
+    - turn on debugging.
+    aditional_lore:
+    - ''
+
+messages:
+  need_guizhanlib_plugin: This plugin needs GuizhanLibPlugin to run! Get it in https://50l.cc/gzlib
+  
+  
+  need_netheo_plugin_update: You must update Netheopoiesis to allow Networks to add
+    relevant features
+  need_slimehud_plugin_update: You must update SlimeHUD to allow the network to add
+    relevant features.
+  hand_item_must_quantum_storage: Item in hand must be a Quantum Storage.
+  corrupted_quantum_storage: This card has either not been set to an item yet or is
+    a corrupted Quantum Storage.
+  item_updated: Item updated
+  empty: 'Empty'
+  cannot_instantiate_class: Cannot instantiate class
+  none: none
+  holding: Holding
+  amount: Amount
+  documentation_wiki: Documentation Wiki
+  documentation_wiki_lore:
+  - Click to get the link to the
+  - documentation Wiki for Networks
+  - and other Sefiraat addons.
+  click_view_wiki: To access the documentation Wiki, please click here
+  previous_page: Previous Page
+  next_page: Next Page
+  change_sorting: Change Sort Order
+  set_filter: Set Filter (Right Click to Clear)
+  type_to_filter: Type what you would like to filter this grid to
+  filter_applied: Filter applied
+  format_amount: '{0}Amount: {1}{2}'
+  craft: Craft
+  try_craft: Try to Craft
+  left_click: Left Click
+  try_return_items: Try to return items
+  debug_for_item_set_to: Debugging for this block has been set to
+  last_restart_off: It will last until a restart or you toggle it off.
+  craft_blueprint: Crafting Blueprint
+  output: Output
+  output_slot: Output Slot
+  input: Input
+  already_has_controller: This network already has a controller!
+  paste_match_template: Paste items matching template
+  cut_match_template: Cut items matching template.
+  cut_empty: Leaving blank will cut anything
+  direction: Direction
+  set_direction: Set Direction
+  open_target_block: Open Target Block
+  blank_blueprint: Blank Blueprint
+  click_to_encode: Click to encode when valid
+  not_enough_network_power_fulfill_task: Not enough Network power to fulfill this
+    task.
+  output_slot_empty: The output slot must be empty.
+  provide_blank_blueprint: You need to provide a blank blueprint
+  doesnot_look_valid_recipe: Doesn't look like this is a valid recipe.
+  export_matching: Export Item Matching
+  import_matching: Store items matching
+  purge_matching: Purge Item Matching
+  push_matching: Push items matching template
+  placement_would_connect_two_controllers: This placement would connect two controllers!
+  status: Status
+  disconnected: Disconnected
+  item_stored: Item Stored
+  no_registered_item: No Registered Item
+  click_icon_to_register0: Click the icon below while
+  click_icon_to_register1: holding an item to register it.
+  set_item: Set Item
+  drag_top_pane_register: Drag an item on top of this pane to register it.
+  change_void: to change voiding
+  quantum_empty_before_change: Quantum Storage must be empty before changing the set
+    item.
+  voiding: Voiding
+  click_entangle: Click to entangle
+  whildchest_detected: WildChests detected
+  whildchest_detected_as_chest: Block detected as chest
+  whildchest_test_failed: WildChest test failed, escaping
+  whildchest_test_passed: WildChest test passed.
+  received_items: Received items
+  transmit_items_matching: Transmit items matching
+  still_cooldown: This is still on cooldown
+  assigned_recipe: Assigned Recipe
+  nothing: Nothing
+  outputting: Outputting
+  debug_op: You can only use this tool as an op'd player.
+  unstack_cards_before: Unstack cards before assigning an item.
+  cards_cannot_stored: This type of item cannot be stored in a Network Card.
+  cards_must_empty_assign: A card must be empty before trying to assign an item.
+  must_target_direcional: Must target a directional Networks interface.
+  directional_not_have_set: This directional does not yet have a direction set
+  config_copied: Configuration copied.
+  crayon_removed: Crayon removed from network
+  crayon_added: Crayon added to network
+  network_sumary: '       Network Summary        '
+  bridges: Bridges
+  monitors: Monitors
+  importers: Importers
+  exportes: Exporters
+  grids: Grids
+  cells: Cells
+  wipers: Wipers
+  grabbers: Grabbers
+  puschers: Pushers
+  pasters: Pasters
+  cutters: Cutters
+  vacuums: Vacuums
+  purgers: Purgers
+  crafters: Crafters
+  power_nodes: Power Nodes
+  power_outlets: Power Outlets
+  power_displays: Power Displays
+  encoders: Encoders
+  greedy_blocks: Greedy Blocks
+  wireless_transmitters: Wireless Transmitters
+  wireless_receivers: Wireless Receivers
+  distinct_items: Distinct Items
+  total_items: Total Items
+  root_power: Root Power
+  total_nodes: Total Nodes
+  warning: Warning
+  error: Error
+  passive: ''
+  notice: Notice
+  success: Success
+  main: Alone
+  click_info: Click here
+  research: Research
+  crafting: Crafting Material
+  machine: Machine
+  tool: Tool
+  mechanism: Mechanism
+  fuel: Fossil Fuel
+  material_class: Material Class
+  recipe_type: Recipe Type
+  guide: Guide
+  maximum_node_limit: Your network has reached or exceeded the maximum node limit.
+    Nodes beyond the limit will not function, which nodes these are may not always
+    be the same. Reduce your total nodes.
+  set_to_grid: Must be set to a Network Grid (not crafting grid).
+  bound_to_remote: Grid has been bound to the remote.
+  bound_not_loaded: The bound grid is not loaded.
+  bound_not_reach: The bound grid is not within reach.
+  remote_not_bound: Remote is not bound to a grid.
+  bound_not_found: The bound grid can no longer be found.
+  must_target_wireless_block: Must target a Network Wireless block.
+  no_wireless_been_set: No Wireless Receiver has been set.
+  wireless_different_world: No Wireless Receiver has been set.
+  wireless_transmitters_location: Set Transmitter's receiver location.
+  wireless_been_set: Wireless Receiver set.
+  networks: Networks
+  crafting_materials: Crafting Materials
+  network_management_tools: Network Management Tools
+  network_items: Network Items
+  network_quantum_storage_devices: Network Quantum Storage Devices
+  disabled_items: Disabled/Removed Items
+  not_supplied: Not supplied
+  successfully_applied: Successfully applied
+  item: Item
+  items: Items
+  item_added_filter: Item added into filter
+  not_enough_item_filter: Not enough items to fill filter
+  no_item_stored_config: No item in stored config
+  no_items_stored_config: No items in stored config
+  unknown_error: Unknown/Error
+  current_network_charge: Current Network Charge

@@ -2,6 +2,7 @@ package io.github.sefiraat.networks.slimefun.tools;
 
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import de.jeff_media.morepersistentdatatypes.DataType;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.slimefun.network.NetworkDirectional;
 import io.github.sefiraat.networks.utils.Keys;
 import io.github.sefiraat.networks.utils.NetworkUtils;
@@ -47,7 +48,7 @@ public class NetworkConfigurator extends SlimefunItem {
                                 NetworkUtils.applyConfig(directional, e.getItem(), blockMenu, player);
                             }
                         } else {
-                            player.sendMessage(Theme.ERROR + "你必须指向一个带方向选择的网络方块");
+                            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("must_target_direcional"));
                         }
                     }
                     e.cancel();
@@ -59,7 +60,7 @@ public class NetworkConfigurator extends SlimefunItem {
         final BlockFace blockFace = NetworkDirectional.getSelectedFace(blockMenu.getLocation());
 
         if (blockFace == null) {
-            player.sendMessage(Theme.ERROR + "该方块没有指定朝向");
+            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("directional_not_have_set"));
             return;
         }
 
@@ -83,6 +84,6 @@ public class NetworkConfigurator extends SlimefunItem {
 
         DataTypeMethods.setCustom(itemMeta, Keys.FACE, DataType.STRING, blockFace.name());
         itemStack.setItemMeta(itemMeta);
-        player.sendMessage(Theme.SUCCESS + "已复制设置");
+        player.sendMessage(Theme.SUCCESS + Networks.getLocalization().getMessage("config_copied"));
     }
 }

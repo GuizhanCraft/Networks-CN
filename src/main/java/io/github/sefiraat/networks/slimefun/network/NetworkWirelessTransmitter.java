@@ -3,6 +3,7 @@ package io.github.sefiraat.networks.slimefun.network;
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.NodeType;
 import io.github.sefiraat.networks.network.stackcaches.ItemRequest;
@@ -45,7 +46,7 @@ public class NetworkWirelessTransmitter extends NetworkObject {
 
     private static final CustomItemStack TEMPLATE_BACKGROUND_STACK = new CustomItemStack(
         Material.GREEN_STAINED_GLASS_PANE,
-        Theme.SUCCESS + "发送的物品"
+        Theme.SUCCESS + Networks.getLocalization().getMessage("transmit_items_matching")
     );
 
     private static final String LINKED_LOCATION_KEY_X = "linked-location-x";

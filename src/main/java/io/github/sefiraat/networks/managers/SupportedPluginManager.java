@@ -19,7 +19,7 @@ public class SupportedPluginManager {
     // endregion
 
     public SupportedPluginManager() {
-        Preconditions.checkArgument(instance == null, "Cannot instantiate class");
+        Preconditions.checkArgument(instance == null, Networks.getLocalization().getMessage("cannot_instantiate_class"));
         instance = this;
         this.infinityExpansion = Bukkit.getPluginManager().isPluginEnabled("InfinityExpansion");
         this.netheopoiesis = Bukkit.getPluginManager().isPluginEnabled("Netheopoiesis");

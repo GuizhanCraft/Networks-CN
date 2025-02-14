@@ -3,6 +3,7 @@ package io.github.sefiraat.networks.utils;
 import de.jeff_media.morepersistentdatatypes.DataType;
 
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NetworkNode;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.NodeType;
@@ -39,12 +40,12 @@ public class NetworkUtils {
         final String string = DataTypeMethods.getCustom(itemMeta, Keys.FACE, DataType.STRING);
 
         if (string == null) {
-            player.sendMessage(Theme.ERROR + "Direction: " + Theme.PASSIVE + "Not supplied");
+            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("direction") + ": " + Theme.PASSIVE + Networks.getLocalization().getMessage("not_supplied"));
             return;
         }
 
         directional.setDirection(blockMenu, BlockFace.valueOf(string));
-        player.sendMessage(Theme.ERROR + "Direction: " + Theme.PASSIVE + "Successfully applied");
+        player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("direction") + ": " + Theme.PASSIVE + Networks.getLocalization().getMessage("successfully_applied"));
 
 
         if (directional.getItemSlots().length > 0) {
@@ -67,21 +68,21 @@ public class NetworkUtils {
                             final ItemStack stackClone = StackUtils.getAsQuantity(stack, 1);
                             stack.setAmount(stack.getAmount() - 1);
                             blockMenu.replaceExistingItem(directional.getItemSlots()[i], stackClone);
-                            player.sendMessage(Theme.SUCCESS + "Item [" + i + "]: " + Theme.PASSIVE + "Item added into filter");
+                            player.sendMessage(Theme.SUCCESS + Networks.getLocalization().getMessage("item") + " [" + i + "]: " + Theme.PASSIVE + Networks.getLocalization().getMessage("item_added_filter"));
                             worked = true;
                             break;
                         }
                     }
                     if (!worked) {
-                        player.sendMessage(Theme.WARNING + "Item [" + i + "]: " + Theme.PASSIVE + "Not enough items to fill filter");
+                        player.sendMessage(Theme.WARNING + Networks.getLocalization().getMessage("item") + " [" + i + "]: " + Theme.PASSIVE + Networks.getLocalization().getMessage("not_enough_item_filter"));
                     }
                 } else if (directional instanceof NetworkPusher) {
-                    player.sendMessage(Theme.WARNING + "Item [" + i + "]: " + Theme.PASSIVE + "No item in stored config");
+                    player.sendMessage(Theme.WARNING + Networks.getLocalization().getMessage("item") + " [" + i + "]: " + Theme.PASSIVE + Networks.getLocalization().getMessage("no_item_stored_config"));
                 }
                 i++;
             }
         } else {
-            player.sendMessage(Theme.WARNING + "Items: " + Theme.PASSIVE + "No items in stored config");
+            player.sendMessage(Theme.WARNING + Networks.getLocalization().getMessage("items") + ": " + Theme.PASSIVE + Networks.getLocalization().getMessage("no_items_stored_config"));
         }
     }
 

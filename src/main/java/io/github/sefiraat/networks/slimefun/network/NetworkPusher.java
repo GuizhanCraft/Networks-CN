@@ -2,6 +2,7 @@ package io.github.sefiraat.networks.slimefun.network;
 
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.NodeType;
 import io.github.sefiraat.networks.network.stackcaches.ItemRequest;
@@ -38,7 +39,7 @@ public class NetworkPusher extends NetworkDirectional {
     private static final int DOWN_SLOT = 32;
 
     public static final CustomItemStack TEMPLATE_BACKGROUND_STACK = new CustomItemStack(
-        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + "指定需要推送的物品"
+        Material.BLUE_STAINED_GLASS_PANE, Theme.PASSIVE + Networks.getLocalization().getMessage("push_matching")
     );
 
     public NetworkPusher(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {

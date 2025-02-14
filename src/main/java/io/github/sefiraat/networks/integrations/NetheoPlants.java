@@ -23,45 +23,45 @@ public class NetheoPlants {
         "NTW_STONE_CHUNK_SEED",
         Skulls.SEED_PURPLE.getPlayerHead(),
         Theme.SEED,
-        "石块之种",
-        new String[]{"这种植物成熟后,", "收获时将获得石块."},
-        Stacks.getCanBePlacedOnLore("下界草方块", "(或净化等级更高的)")
+        Networks.getLocalization().getItemName("ntw_stone_chunk_seed"),
+        Networks.getLocalization().getItemLore("ntw_stone_chunk_seed"),
+        Stacks.getCanBePlacedOnLore(Networks.getLocalization().getItemItemAditionalLore("ntw_stone_chunk_seed"))
     );
 
     public static final SlimefunItemStack SYNTHETIC_SEED = Theme.themedSeed(
         "NTW_SYNTHETIC_SEED",
         Skulls.SEED_ORANGE.getPlayerHead(),
         Theme.SEED,
-        "人造之种",
-        new String[]{"这个种子没有任何效果."},
-        Stacks.getCanBePlacedOnLore("下界草方块", "(或净化等级更高的)")
+        Networks.getLocalization().getItemName("ntw_synthetic_seed"),
+        Networks.getLocalization().getItemLore("ntw_synthetic_seed"),
+        Stacks.getCanBePlacedOnLore(Networks.getLocalization().getItemItemAditionalLore("ntw_synthetic_seed"))
     );
 
     public static final SlimefunItemStack SYNTHETIC_EMERALD_SEED = Theme.themedSeed(
         "NTW_SYNTHETIC_EMERALD_SEED",
         Skulls.SEED_GREEN.getPlayerHead(),
         Theme.SEED,
-        "人造绿宝石之种",
-        new String[]{"这种植物成熟后,", "收获时将获得人造绿宝石."},
-        Stacks.getCanBePlacedOnLore("贪婪泥土", "(或净化等级更高的)")
+        Networks.getLocalization().getItemName("ntw_synthetic_emerald_seed"),
+        Networks.getLocalization().getItemLore("ntw_synthetic_emerald_seed"),
+        Stacks.getCanBePlacedOnLore(Networks.getLocalization().getItemItemAditionalLore("ntw_synthetic_emerald_seed"))
     );
 
     public static final SlimefunItemStack SYNTHETIC_DIAMOND_SEED = Theme.themedSeed(
         "NTW_SYNTHETIC_DIAMOND_SEED",
         Skulls.SEED_GREEN.getPlayerHead(),
         Theme.SEED,
-        "人造钻石之种",
-        new String[]{"这种植物成熟后,", "收获时将获得人造钻石."},
-        Stacks.getCanBePlacedOnLore("贪婪泥土", "(或净化等级更高的)")
+        Networks.getLocalization().getItemName("ntw_synthetic_diamond_seed"),
+        Networks.getLocalization().getItemLore("ntw_synthetic_diamond_seed"),
+        Stacks.getCanBePlacedOnLore(Networks.getLocalization().getItemItemAditionalLore("ntw_synthetic_diamond_seed"))
     );
 
     public static final SlimefunItemStack FRAGMENTED_SEED = Theme.themedSeed(
         "NTW_FRAGMENTED_SEED",
         Skulls.SEED_GREEN.getPlayerHead(),
         Theme.SEED,
-        "碎片之种",
-        new String[]{"这种植物成熟后,", "收获时将获得人造绿宝石碎片."},
-        Stacks.getCanBePlacedOnLore("贪婪泥土", "(或净化等级更高的)")
+        Networks.getLocalization().getItemName("ntw_fragmented_seed"),
+        Networks.getLocalization().getItemLore("ntw_fragmented_seed"),
+        Stacks.getCanBePlacedOnLore(Networks.getLocalization().getItemItemAditionalLore("ntw_fragmented_seed"))
     );
 
     public static void setup() {

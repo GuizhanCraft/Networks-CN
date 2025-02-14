@@ -3,6 +3,7 @@ package io.github.sefiraat.networks.slimefun.network;
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NodeType;
 import io.github.sefiraat.networks.utils.NetworkUtils;
 import io.github.sefiraat.networks.utils.Theme;
@@ -318,7 +319,7 @@ public abstract class NetworkDirectional extends NetworkObject {
     public static ItemStack getDirectionalSlotPane(@Nonnull BlockFace blockFace, @Nonnull SlimefunItem slimefunItem, boolean active) {
         final ItemStack displayStack = new CustomItemStack(
             slimefunItem.getItem(),
-            Theme.PASSIVE + "设置朝向: " + blockFace.name() + " (" + ChatColor.stripColor(slimefunItem.getItemName()) + ")"
+            Theme.PASSIVE + Networks.getLocalization().getMessage("direction") + ": " + blockFace.name() + " (" + ChatColor.stripColor(slimefunItem.getItemName()) + ")"
         );
         final ItemMeta itemMeta = displayStack.getItemMeta();
         if (active) {
@@ -326,8 +327,8 @@ public abstract class NetworkDirectional extends NetworkObject {
             itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         }
         itemMeta.setLore(List.of(
-            Theme.CLICK_INFO + "左键点击: " + Theme.PASSIVE + "设置朝向",
-            Theme.CLICK_INFO + "Shift+左键点击: " + Theme.PASSIVE + "打开目标方块"
+            Theme.CLICK_INFO + Networks.getLocalization().getMessage("left_click") + ": " + Theme.PASSIVE + Networks.getLocalization().getMessage("set_direction"),
+            Theme.CLICK_INFO + "Shift+" + Networks.getLocalization().getMessage("left_click") + ": " + Theme.PASSIVE + Networks.getLocalization().getMessage("open_target_block")
         ));
         displayStack.setItemMeta(itemMeta);
         return displayStack;
@@ -338,7 +339,7 @@ public abstract class NetworkDirectional extends NetworkObject {
         if (blockMaterial.isItem() && !blockMaterial.isAir()) {
             final ItemStack displayStack = new CustomItemStack(
                 blockMaterial,
-                Theme.PASSIVE + "设置朝向 " + blockFace.name() + " (" + MaterialHelper.getName(blockMaterial) + ")"
+                Theme.PASSIVE + Networks.getLocalization().getMessage("direction") + " " + blockFace.name() + " (" + MaterialHelper.getName(blockMaterial) + ")"
             );
             final ItemMeta itemMeta = displayStack.getItemMeta();
             if (active) {
@@ -346,8 +347,8 @@ public abstract class NetworkDirectional extends NetworkObject {
                 itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
             }
             itemMeta.setLore(List.of(
-                Theme.CLICK_INFO + "左键点击: " + Theme.PASSIVE + "设置朝向",
-                Theme.CLICK_INFO + "Shift+左键点击: " + Theme.PASSIVE + "打开目标方块"
+                Theme.CLICK_INFO + Networks.getLocalization().getMessage("left_click") + ": " + Theme.PASSIVE + Networks.getLocalization().getMessage("set_direction"),
+                Theme.CLICK_INFO + "Shift+" + Networks.getLocalization().getMessage("left_click") + ": " + Theme.PASSIVE + Networks.getLocalization().getMessage("open_target_block")
             ));
             displayStack.setItemMeta(itemMeta);
             return displayStack;
@@ -355,7 +356,7 @@ public abstract class NetworkDirectional extends NetworkObject {
             Material material = active ? Material.GREEN_STAINED_GLASS_PANE : Material.RED_STAINED_GLASS_PANE;
             return new CustomItemStack(
                 material,
-                ChatColor.GRAY + "设置朝向: " + blockFace.name()
+                ChatColor.GRAY + Networks.getLocalization().getMessage("set_direction") + ": " + blockFace.name()
             );
         }
     }

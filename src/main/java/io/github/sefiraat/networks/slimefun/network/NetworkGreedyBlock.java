@@ -1,5 +1,6 @@
 package io.github.sefiraat.networks.slimefun.network;
 
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NodeType;
 import io.github.sefiraat.networks.slimefun.NetworkSlimefunItems;
 import io.github.sefiraat.networks.utils.Theme;
@@ -34,12 +35,12 @@ public class NetworkGreedyBlock extends NetworkObject {
 
     private static final CustomItemStack TEMPLATE_BACKGROUND_STACK = new CustomItemStack(
         Material.GREEN_STAINED_GLASS_PANE,
-        Theme.SUCCESS + "需要阻断的物品"
+        Theme.SUCCESS + Networks.getLocalization().getMessage("import_matching")
     );
 
     private static final CustomItemStack STORAGE_BACKGROUND_STACK = new CustomItemStack(
         Material.ORANGE_STAINED_GLASS_PANE,
-        Theme.SUCCESS + "物品存储"
+        Theme.SUCCESS + Networks.getLocalization().getMessage("output_slot")
     );
 
     public NetworkGreedyBlock(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {

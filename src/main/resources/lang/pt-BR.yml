@@ -1,0 +1,10 @@
+categories:
+  ash: asdasd2
+
+items:
+  asd: asdasd
+
+messages:
+  need_guizhanlib_plugin: "Este plugin requer o GuizhanLibPlugin para ser executado! Baixe aqui: https://50l.cc/gzlib"
+  need_netheo_plugin_update: Você deve atualizar o Netheopoiesis para permitir que o Networks adicione recursos relevantes.
+  need_slimehud_plugin_update: Você deve atualizar o SlimeHUD para permitir que o Networks adicione recursos relevantes.

@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.slimefun.network.grid;
 
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.GridItemRequest;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.SupportedRecipes;
@@ -52,9 +53,9 @@ public class NetworkCraftingGrid extends AbstractGrid {
 
     private static final CustomItemStack CRAFT_BUTTON_STACK = new CustomItemStack(
         Material.CRAFTING_TABLE,
-        Theme.CLICK_INFO.getColor() + "合成",
-        Theme.CLICK_INFO + "左键点击: " + Theme.PASSIVE + "合成",
-        Theme.CLICK_INFO + "Shift+左键点击: " + Theme.PASSIVE + "将合成台内物品送回网络"
+        Theme.CLICK_INFO.getColor() + Networks.getLocalization().getMessage("craft"),
+        Theme.CLICK_INFO + Networks.getLocalization().getMessage("left_click") + ": " + Theme.PASSIVE + Networks.getLocalization().getMessage("try_craft"),
+        Theme.CLICK_INFO + "Shift+" + Networks.getLocalization().getMessage("left_click") + ": " + Theme.PASSIVE + Networks.getLocalization().getMessage("try_return_items")
     );
 
     private static final Map<Location, GridCache> CACHE_MAP = new HashMap<>();

@@ -3,6 +3,7 @@ package io.github.sefiraat.networks.slimefun.network;
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.NetworkRoot;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.NodeType;
@@ -153,7 +154,7 @@ public abstract class NetworkObject extends SlimefunItem implements AdminDebugga
     }
 
     protected void cancelPlace(PlayerRightClickEvent event) {
-        event.getPlayer().sendMessage(Theme.ERROR.getColor() + "This placement would connect two controllers!");
+        event.getPlayer().sendMessage(Theme.ERROR.getColor() + Networks.getLocalization().getMessage("placement_would_connect_two_controllers"));
         event.cancel();
     }
 

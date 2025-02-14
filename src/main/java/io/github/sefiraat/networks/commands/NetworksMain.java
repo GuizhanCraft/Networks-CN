@@ -1,5 +1,6 @@
 package io.github.sefiraat.networks.commands;
 
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.stackcaches.QuantumCache;
 import io.github.sefiraat.networks.slimefun.NetworkSlimefunItems;
 import io.github.sefiraat.networks.slimefun.network.NetworkQuantumStorage;
@@ -61,14 +62,14 @@ public class NetworksMain implements CommandExecutor {
     public void fillQuantum(Player player, int amount) {
         final ItemStack itemStack = player.getInventory().getItemInMainHand();
         if (itemStack == null || itemStack.getType() == Material.AIR) {
-            player.sendMessage(Theme.ERROR + "你必须手持量子存储");
+            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("hand_item_must_quantum_storage"));
             return;
         }
 
         SlimefunItem slimefunItem = SlimefunItem.getByItem(itemStack);
 
         if (!(slimefunItem instanceof NetworkQuantumStorage)) {
-            player.sendMessage(Theme.ERROR + "你手中的物品必须为量子存储");
+            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("hand_item_must_quantum_storage"));
             return;
         }
 
@@ -80,7 +81,7 @@ public class NetworksMain implements CommandExecutor {
         );
 
         if (quantumCache == null || quantumCache.getItemStack() == null) {
-            player.sendMessage(Theme.ERROR + "量子存储未指定物品或已损坏");
+            player.sendMessage(Theme.ERROR + Networks.getLocalization().getMessage("corrupted_quantum_storage"));
             return;
         }
 
@@ -88,6 +89,6 @@ public class NetworksMain implements CommandExecutor {
         DataTypeMethods.setCustom(meta, Keys.QUANTUM_STORAGE_INSTANCE, PersistentQuantumStorageType.TYPE, quantumCache);
         quantumCache.updateMetaLore(meta);
         itemStack.setItemMeta(meta);
-        player.sendMessage(Theme.SUCCESS + "已更新物品");
+        player.sendMessage(Theme.SUCCESS + Networks.getLocalization().getMessage("item_updated"));
     }
 }

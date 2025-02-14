@@ -1,6 +1,8 @@
 package io.github.sefiraat.networks.slimefun.network;
 
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
+
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.stackcaches.QuantumCache;
 import io.github.sefiraat.networks.utils.Keys;
 import io.github.sefiraat.networks.utils.Theme;
@@ -44,7 +46,7 @@ public class NetworkQuantumWorkbench extends SlimefunItem {
 
     private static final CustomItemStack CRAFT_BUTTON_STACK = new CustomItemStack(
         Material.CRAFTING_TABLE,
-        Theme.CLICK_INFO + "点击进行量子纠缠"
+        Theme.CLICK_INFO + Networks.getLocalization().getMessage("click_entangle")
     );
 
     private static final Map<ItemStack[], ItemStack> RECIPES = new HashMap<>();
@@ -54,8 +56,8 @@ public class NetworkQuantumWorkbench extends SlimefunItem {
         Theme.themedItemStack(
             Material.BRAIN_CORAL_BLOCK,
             Theme.MACHINE,
-            "网络量子工作台",
-            "在量子工作台中制作"
+            Networks.getLocalization().getItemName("quantum_workbench"),
+            Networks.getLocalization().getItemLore("quantum_workbench")
         ),
         NetworkQuantumWorkbench::addRecipe
     );

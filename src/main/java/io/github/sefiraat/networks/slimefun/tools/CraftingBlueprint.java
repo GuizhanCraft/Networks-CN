@@ -1,5 +1,6 @@
 package io.github.sefiraat.networks.slimefun.tools;
 
+import io.github.sefiraat.networks.Networks;
 import io.github.sefiraat.networks.network.stackcaches.BlueprintInstance;
 import io.github.sefiraat.networks.utils.Keys;
 import io.github.sefiraat.networks.utils.Theme;
@@ -37,18 +38,18 @@ public class CraftingBlueprint extends UnplaceableBlock implements DistinctiveIt
         DataTypeMethods.setCustom(itemMeta, Keys.BLUEPRINT_INSTANCE, PersistentCraftingBlueprintType.TYPE, new BlueprintInstance(recipe, output));
         List<String> lore = new ArrayList<>();
 
-        lore.add(Theme.CLICK_INFO + "已指定配方");
+        lore.add(Theme.CLICK_INFO + Networks.getLocalization().getMessage("assigned_recipe"));
 
         for (ItemStack item : recipe) {
             if (item == null) {
-                lore.add(Theme.PASSIVE + "空");
+                lore.add(Theme.PASSIVE + Networks.getLocalization().getMessage("nothing"));
                 continue;
             }
             lore.add(Theme.PASSIVE + ChatColor.stripColor(ItemStackHelper.getDisplayName(item)));
         }
 
         lore.add("");
-        lore.add(Theme.CLICK_INFO + "输出物品");
+        lore.add(Theme.CLICK_INFO + Networks.getLocalization().getMessage("outputting"));
 
         lore.add(Theme.PASSIVE + ChatColor.stripColor(ItemStackHelper.getDisplayName(output)));
 
