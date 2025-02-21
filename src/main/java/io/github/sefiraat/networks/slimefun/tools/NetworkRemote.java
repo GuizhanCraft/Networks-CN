@@ -101,14 +101,20 @@ public class NetworkRemote extends SlimefunItem {
 
     public static void openGrid(@Nonnull Location location, @Nonnull Player player) {
         SlimefunBlockData blockData = StorageCacheUtils.getBlock(location);
-        StorageCacheUtils.executeAfterLoad(blockData, () -> {
-            if (SlimefunItem.getById(blockData.getSfId()) instanceof NetworkGrid
-                && Slimefun.getProtectionManager().hasPermission(player, location, Interaction.INTERACT_BLOCK)) {
-                blockData.getBlockMenu().open(player);
-            } else {
-                player.sendMessage(Theme.ERROR + "无法找到绑定的网格");
-            }
-        }, false);
+
+        if(blockData == null) {
+            player.sendMessage(Theme.ERROR + "无法找到绑定的网格");
+        }
+        else {
+            StorageCacheUtils.executeAfterLoad(blockData, () -> {
+                if (SlimefunItem.getById(blockData.getSfId()) instanceof NetworkGrid
+                    && Slimefun.getProtectionManager().hasPermission(player, location, Interaction.INTERACT_BLOCK)) {
+                    blockData.getBlockMenu().open(player);
+                } else {
+                    player.sendMessage(Theme.ERROR + "无法找到绑定的网格");
+                }
+            }, false);
+        }
     }
 
     public int getRange() {
