@@ -1,6 +1,8 @@
 package io.github.sefiraat.networks.slimefun.network;
 
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
+
+import io.github.sefiraat.networks.events.NetworkCraftEvent;
 import io.github.sefiraat.networks.network.stackcaches.QuantumCache;
 import io.github.sefiraat.networks.utils.Keys;
 import io.github.sefiraat.networks.utils.Theme;
@@ -18,6 +20,8 @@ import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
+
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -96,14 +100,14 @@ public class NetworkQuantumWorkbench extends SlimefunItem {
             @Override
             public void newInstance(@Nonnull BlockMenu menu, @Nonnull Block b) {
                 menu.addMenuClickHandler(CRAFT_SLOT, (p, slot, item, action) -> {
-                    craft(menu);
+                    craft(menu, p);
                     return false;
                 });
             }
         };
     }
 
-    public void craft(@Nonnull BlockMenu menu) {
+    public void craft(@Nonnull BlockMenu menu, Player player) {
         final ItemStack itemInOutput = menu.getItemInSlot(OUTPUT_SLOT);
 
         // Quick escape, we only allow crafting if the output is empty
@@ -153,6 +157,14 @@ public class NetworkQuantumWorkbench extends SlimefunItem {
                     crafted.setItemMeta(newMeta);
                 }
             }
+
+            // fire craft event
+            NetworkCraftEvent event = new NetworkCraftEvent(player, this, inputs, crafted);
+            Bukkit.getPluginManager().callEvent(event);
+            if (event.isCancelled()) {
+                return;
+            }
+            crafted = event.getOutput();
 
             menu.pushItem(crafted, OUTPUT_SLOT);
             for (int recipeSlot : RECIPE_SLOTS) {
