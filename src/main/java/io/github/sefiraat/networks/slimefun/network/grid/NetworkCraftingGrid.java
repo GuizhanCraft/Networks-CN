@@ -1,6 +1,7 @@
 package io.github.sefiraat.networks.slimefun.network.grid;
 
 import io.github.sefiraat.networks.NetworkStorage;
+import io.github.sefiraat.networks.events.NetworkCraftEvent;
 import io.github.sefiraat.networks.network.GridItemRequest;
 import io.github.sefiraat.networks.network.NodeDefinition;
 import io.github.sefiraat.networks.network.SupportedRecipes;
@@ -226,6 +227,15 @@ public class NetworkCraftingGrid extends AbstractGrid {
         if (crafted.getType() == Material.AIR || !menu.fits(crafted, CRAFT_OUTPUT_SLOT)) {
             return;
         }
+
+        // fire craft event
+        NetworkCraftEvent event = new NetworkCraftEvent(player, this, inputs, crafted);
+        Bukkit.getPluginManager().callEvent(event);
+        if (event.isCancelled()) {
+            return;
+        }
+        crafted = event.getOutput();
+
 
         // Push item
         menu.pushItem(crafted, CRAFT_OUTPUT_SLOT);
