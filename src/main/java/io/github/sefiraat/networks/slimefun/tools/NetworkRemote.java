@@ -102,7 +102,7 @@ public class NetworkRemote extends SlimefunItem {
     public static void openGrid(@Nonnull Location location, @Nonnull Player player) {
         SlimefunBlockData blockData = StorageCacheUtils.getBlock(location);
 
-        if(blockData == null) {
+        if (blockData == null) {
             player.sendMessage(Theme.ERROR + "无法找到绑定的网格");
             return;
         }
