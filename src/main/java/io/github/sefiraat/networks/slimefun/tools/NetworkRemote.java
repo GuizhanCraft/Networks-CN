@@ -104,17 +104,17 @@ public class NetworkRemote extends SlimefunItem {
 
         if(blockData == null) {
             player.sendMessage(Theme.ERROR + "无法找到绑定的网格");
+            return;
         }
-        else {
-            StorageCacheUtils.executeAfterLoad(blockData, () -> {
-                if (SlimefunItem.getById(blockData.getSfId()) instanceof NetworkGrid
-                    && Slimefun.getProtectionManager().hasPermission(player, location, Interaction.INTERACT_BLOCK)) {
-                    blockData.getBlockMenu().open(player);
-                } else {
-                    player.sendMessage(Theme.ERROR + "无法找到绑定的网格");
-                }
-            }, false);
-        }
+        
+        StorageCacheUtils.executeAfterLoad(blockData, () -> {
+            if (SlimefunItem.getById(blockData.getSfId()) instanceof NetworkGrid
+                && Slimefun.getProtectionManager().hasPermission(player, location, Interaction.INTERACT_BLOCK)) {
+                blockData.getBlockMenu().open(player);
+            } else {
+                player.sendMessage(Theme.ERROR + "无法找到绑定的网格");
+            }
+        }, false);
     }
 
     public int getRange() {
